@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lin Yu | Fresh 3D Portfolio</title>
+    <meta name="description" content="A fresh multilingual personal page with animated 3D visuals." />
+    <link rel="stylesheet" href="./styles.css?v=8" />
+  </head>
+  <body>
+    <canvas id="space" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-mark">LY</span>
+        <span data-i18n="brand">林屿</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#work" onclick="window.scrollToSection?.('work')" data-i18n="navWork">作品</a>
+        <a href="#profile" onclick="window.scrollToSection?.('profile')" data-i18n="navProfile">关于</a>
+        <a href="#contact" onclick="window.scrollToSection?.('contact')" data-i18n="navContact">联系</a>
+      </nav>
+      <div class="lang-switch" aria-label="Language">
+        <a class="active" href="?lang=zh" data-lang="zh">中</a>
+        <a href="?lang=en" data-lang="en">EN</a>
+        <a href="?lang=ja" data-lang="ja">日</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title" data-i18n="heroTitle">林屿</h1>
+          <p class="hero-subtitle" data-i18n="heroSubtitle">
+            用产品思维、影像感和工程能力，制作轻盈、清晰、有记忆点的数字体验。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#work" onclick="window.scrollToSection?.('work')" data-i18n="viewWork">查看作品</a>
+            <a class="secondary-action" href="#contact" onclick="window.scrollToSection?.('contact')" data-i18n="sayHello">聊聊合作</a>
+          </div>
+        </div>
+        <div class="hero-meta" aria-label="Highlights">
+          <div>
+            <span data-i18n="metaOneValue">8 年</span>
+            <p data-i18n="metaOneLabel">设计与开发</p>
+          </div>
+          <div>
+            <span data-i18n="metaTwoValue">42+</span>
+            <p data-i18n="metaTwoLabel">发布项目</p>
+          </div>
+          <div>
+            <span data-i18n="metaThreeValue">全球</span>
+            <p data-i18n="metaThreeLabel">远程协作</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ticker" aria-label="Capabilities">
+        <span>Creative Direction</span>
+        <span>WebGL</span>
+        <span>Product Design</span>
+        <span>Motion Systems</span>
+        <span>Brand Worlds</span>
+      </section>
+
+      <section class="section intro" id="profile" aria-labelledby="profile-title">
+        <div class="section-kicker" data-i18n="profileKicker">关于</div>
+        <h2 id="profile-title" data-i18n="profileTitle">把复杂的想法，变成清晰、漂亮、可用的界面。</h2>
+        <p data-i18n="profileBody">
+          我关注人如何感知信息，也关注系统如何稳定运行。我的工作横跨品牌、交互、前端工程与 3D 视觉，喜欢把抽象叙事做成可触摸的体验。
+        </p>
+      </section>
+
+      <section class="section work" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker" data-i18n="workKicker">精选作品</div>
+            <h2 id="work-title" data-i18n="workTitle">近期项目</h2>
+          </div>
+          <a href="#contact" data-i18n="workCta">合作咨询</a>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-visual visual-a"></div>
+            <div class="project-content">
+              <p>01 / AI Interface</p>
+              <h3 data-i18n="projectOneTitle">面向研究团队的知识工作台</h3>
+              <span data-i18n="projectOneMeta">产品策略 / 原型 / 前端</span>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual visual-b"></div>
+            <div class="project-content">
+              <p>02 / Spatial Web</p>
+              <h3 data-i18n="projectTwoTitle">沉浸式品牌发布页面</h3>
+              <span data-i18n="projectTwoMeta">WebGL / 动效 / 视觉系统</span>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual visual-c"></div>
+            <div class="project-content">
+              <p>03 / Data Story</p>
+              <h3 data-i18n="projectThreeTitle">城市数据叙事仪表盘</h3>
+              <span data-i18n="projectThreeMeta">信息设计 / 地图 / 数据可视化</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section stack" aria-labelledby="stack-title">
+        <div class="section-kicker" data-i18n="stackKicker">能力</div>
+        <h2 id="stack-title" data-i18n="stackTitle">从概念到发布，一条线做到底。</h2>
+        <div class="stack-list">
+          <div>
+            <span>01</span>
+            <h3 data-i18n="stackOneTitle">体验策略</h3>
+            <p data-i18n="stackOneBody">定位、叙事、用户路径和核心转化。</p>
+          </div>
+          <div>
+            <span>02</span>
+            <h3 data-i18n="stackTwoTitle">界面设计</h3>
+            <p data-i18n="stackTwoBody">设计系统、动效规范和高保真原型。</p>
+          </div>
+          <div>
+            <span>03</span>
+            <h3 data-i18n="stackThreeTitle">前端实现</h3>
+            <p data-i18n="stackThreeBody">响应式页面、3D 互动和性能优化。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <p data-i18n="contactKicker">现在可接新项目</p>
+        <h2 id="contact-title" data-i18n="contactTitle">一起做一个让人停下来的数字作品。</h2>
+        <a href="mailto:hello@example.com" data-i18n="contactCta">hello@example.com</a>
+      </section>
+    </main>
+
+    <script src="./ui.js?v=8"></script>
+    <script src="./app.js?v=8"></script>
+  </body>
+</html>
