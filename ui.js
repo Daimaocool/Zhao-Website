@@ -7,6 +7,9 @@
       navContact: "联系",
       heroTitle: "林屿",
       heroSubtitle: "用产品思维、影像感和工程能力，制作轻盈、清晰、有记忆点的数字体验。",
+      chipOne: "交互设计",
+      chipTwo: "3D 动效",
+      chipThree: "前端实现",
       viewWork: "查看作品",
       sayHello: "聊聊合作",
       metaOneValue: "8 年",
@@ -30,6 +33,10 @@
       projectThreeMeta: "信息设计 / 地图 / 数据可视化",
       stackKicker: "能力",
       stackTitle: "从概念到发布，一条线做到底。",
+      processOne: "发现",
+      processTwo: "原型",
+      processThree: "视觉",
+      processFour: "上线",
       stackOneTitle: "体验策略",
       stackOneBody: "定位、叙事、用户路径和核心转化。",
       stackTwoTitle: "界面设计",
@@ -48,6 +55,9 @@
       heroTitle: "Lin Yu",
       heroSubtitle:
         "I shape light, clear, memorable digital experiences with product thinking, cinematic detail, and engineering craft.",
+      chipOne: "Interaction Design",
+      chipTwo: "3D Motion",
+      chipThree: "Frontend Build",
       viewWork: "View Work",
       sayHello: "Start a Chat",
       metaOneValue: "8 yrs",
@@ -71,6 +81,10 @@
       projectThreeMeta: "Information design / Maps / Data viz",
       stackKicker: "Capabilities",
       stackTitle: "From first concept to launch, I can carry the whole thread.",
+      processOne: "Discover",
+      processTwo: "Prototype",
+      processThree: "Visualize",
+      processFour: "Launch",
       stackOneTitle: "Experience Strategy",
       stackOneBody: "Positioning, narrative, user journeys, and conversion logic.",
       stackTwoTitle: "Interface Design",
@@ -88,6 +102,9 @@
       navContact: "連絡",
       heroTitle: "リン・ユ",
       heroSubtitle: "プロダクト思考、映像的な質感、実装力で軽やかで記憶に残るデジタル体験をつくります。",
+      chipOne: "インタラクション",
+      chipTwo: "3D モーション",
+      chipThree: "フロントエンド",
       viewWork: "作品を見る",
       sayHello: "相談する",
       metaOneValue: "8 年",
@@ -111,6 +128,10 @@
       projectThreeMeta: "情報設計 / 地図 / データ可視化",
       stackKicker: "できること",
       stackTitle: "コンセプトから公開まで、一本の流れで形にします。",
+      processOne: "発見",
+      processTwo: "試作",
+      processThree: "視覚化",
+      processFour: "公開",
       stackOneTitle: "体験戦略",
       stackOneBody: "ポジショニング、物語、ユーザー導線、転換設計。",
       stackTwoTitle: "UI デザイン",
@@ -169,4 +190,25 @@
 
   const initialLanguage = new URLSearchParams(window.location.search).get("lang") || "zh";
   setLanguage(initialLanguage);
+
+  const revealTargets = document.querySelectorAll(
+    ".hero-copy, .hero-meta div, .ticker, .intro, .section-heading, .project-card, .stack-list div, .contact",
+  );
+  revealTargets.forEach((element, index) => {
+    element.classList.add("reveal");
+    element.style.setProperty("--reveal-delay", Math.min(index * 45, 360) + "ms");
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.18 },
+  );
+  revealTargets.forEach((element) => observer.observe(element));
 })();

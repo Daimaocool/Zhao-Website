@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lin Yu | Fresh 3D Portfolio</title>
     <meta name="description" content="A fresh multilingual personal page with animated 3D visuals." />
-    <link rel="stylesheet" href="./styles.css?v=8" />
+    <link rel="stylesheet" href="./styles.css?v=9" />
   </head>
   <body>
     <canvas id="space" aria-hidden="true"></canvas>
@@ -34,6 +34,11 @@
           <p class="hero-subtitle" data-i18n="heroSubtitle">
             用产品思维、影像感和工程能力，制作轻盈、清晰、有记忆点的数字体验。
           </p>
+          <div class="hero-chips" aria-label="Focus areas">
+            <span data-i18n="chipOne">交互设计</span>
+            <span data-i18n="chipTwo">3D 动效</span>
+            <span data-i18n="chipThree">前端实现</span>
+          </div>
           <div class="hero-actions">
             <a class="primary-action" href="#work" onclick="window.scrollToSection?.('work')" data-i18n="viewWork">查看作品</a>
             <a class="secondary-action" href="#contact" onclick="window.scrollToSection?.('contact')" data-i18n="sayHello">聊聊合作</a>
@@ -53,6 +58,9 @@
             <p data-i18n="metaThreeLabel">远程协作</p>
           </div>
         </div>
+        <a class="scroll-cue" href="#profile" onclick="window.scrollToSection?.('profile')" aria-label="Scroll">
+          <span></span>
+        </a>
       </section>
 
       <section class="ticker" aria-label="Capabilities">
@@ -111,6 +119,12 @@
       <section class="section stack" aria-labelledby="stack-title">
         <div class="section-kicker" data-i18n="stackKicker">能力</div>
         <h2 id="stack-title" data-i18n="stackTitle">从概念到发布，一条线做到底。</h2>
+        <div class="process-strip" aria-label="Process">
+          <span data-i18n="processOne">发现</span>
+          <span data-i18n="processTwo">原型</span>
+          <span data-i18n="processThree">视觉</span>
+          <span data-i18n="processFour">上线</span>
+        </div>
         <div class="stack-list">
           <div>
             <span>01</span>
@@ -137,7 +151,7 @@
       </section>
     </main>
 
-    <script src="./ui.js?v=8"></script>
-    <script src="./app.js?v=8"></script>
+    <script src="./ui.js?v=9"></script>
+    <script src="./app.js?v=9"></script>
   </body>
 </html>

@@ -3,6 +3,7 @@
   const ctx = canvas.getContext("2d", { alpha: true });
   const pointer = { x: 0, y: 0 };
   const particles = [];
+  const sparks = [];
   const palette = ["#52c9a2", "#6cb8ff", "#ffd166", "#ff8a80", "#ffffff"];
   let width = 0;
   let height = 0;
@@ -31,6 +32,18 @@
         z: Math.sin(phi) * Math.sin(theta) * radius,
         color: palette[i % palette.length],
         size: 0.7 + Math.random() * 1.8,
+      });
+    }
+
+    sparks.length = 0;
+    for (let i = 0; i < 11; i += 1) {
+      sparks.push({
+        x: Math.random() * 1.2 - 0.6,
+        y: Math.random() * 1.2 - 0.6,
+        z: Math.random() * 1.8 - 0.9,
+        speed: 0.22 + Math.random() * 0.34,
+        delay: Math.random() * 8,
+        color: palette[i % palette.length],
       });
     }
   }
@@ -94,7 +107,30 @@
 
     drawRing(center, radius * 1.28, time * 0.75, "#52c9a2", 0.62);
     drawRing(center, radius * 1.7, -time * 0.52 + 1.1, "#6cb8ff", 0.48);
+    drawRing(center, radius * 1.05 + Math.sin(time * 1.2) * 8, time * -0.62, "#ffd166", 0.28);
     drawRibbon(time);
+    drawCoreHighlights(center, radius, time);
+  }
+
+  function drawCoreHighlights(center, radius, time) {
+    const dots = [
+      { x: -0.32, y: -0.36, color: "#ffffff", size: 0.08 },
+      { x: 0.24, y: 0.2, color: "#52c9a2", size: 0.055 },
+      { x: -0.08, y: 0.32, color: "#ffd166", size: 0.04 },
+    ];
+
+    dots.forEach((dot, index) => {
+      const pulse = 1 + Math.sin(time * 2 + index) * 0.16;
+      const x = center.x + dot.x * radius;
+      const y = center.y + dot.y * radius;
+      const glow = ctx.createRadialGradient(x, y, 0, x, y, radius * dot.size * 5);
+      glow.addColorStop(0, hexToRgba(dot.color, 0.72));
+      glow.addColorStop(1, hexToRgba(dot.color, 0));
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(x, y, radius * dot.size * 5 * pulse, 0, Math.PI * 2);
+      ctx.fill();
+    });
   }
 
   function drawRing(center, radius, angle, color, alpha) {
@@ -129,6 +165,44 @@
       else ctx.lineTo(screen.x, screen.y);
     }
     ctx.stroke();
+  }
+
+  function drawConnections(time) {
+    const selected = particles.slice(0, 70).map((particle) => project(rotate(particle, time * 0.28)));
+    ctx.lineWidth = 0.7;
+    for (let i = 0; i < selected.length; i += 1) {
+      const a = selected[i];
+      for (let j = i + 1; j < Math.min(i + 4, selected.length); j += 1) {
+        const b = selected[j];
+        const distance = Math.hypot(a.x - b.x, a.y - b.y);
+        if (distance < 86) {
+          ctx.strokeStyle = `rgba(82, 201, 162, ${Math.max(0, 0.12 - distance / 900)})`;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function drawSparks(time) {
+    sparks.forEach((spark, index) => {
+      const cycle = (time * spark.speed + spark.delay) % 1;
+      const x = width * (0.08 + cycle * 0.92) + spark.x * 80;
+      const y = height * (0.18 + ((index % 5) * 0.13)) + Math.sin(time + index) * 16 + spark.y * 50;
+      const length = 42 + spark.z * 18;
+      const alpha = Math.sin(cycle * Math.PI) * 0.34;
+      const gradient = ctx.createLinearGradient(x - length, y - length * 0.32, x, y);
+      gradient.addColorStop(0, hexToRgba(spark.color, 0));
+      gradient.addColorStop(1, hexToRgba(spark.color, alpha));
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.moveTo(x - length, y - length * 0.32);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+    });
   }
 
   function drawParticles(time) {
@@ -166,6 +240,8 @@
     const time = timeStamp * 0.001;
     ctx.clearRect(0, 0, width, height);
     drawParticles(time);
+    drawConnections(time);
+    drawSparks(time);
     drawOrb(time);
     requestAnimationFrame(draw);
   }
