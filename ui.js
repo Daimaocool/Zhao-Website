@@ -9,6 +9,7 @@
       navContact: "联系",
       heroBadge: "工业软件 / AI 集成 / 数据中心能源管理",
       heroTitle: "赵宇轩",
+      heroAlias: "Zhao Yuxuan · Daimaocool · 软件工程师",
       heroSubtitle:
         "计算机科学与技术背景，3 年企业级工业软件开发经验，参与 MES、ERP、EMS、BMS、HMI、AI 知识检索与人脸识别系统建设。",
       chipOne: "MES / WAPS",
@@ -24,7 +25,7 @@
       profileKicker: "个人简介",
       profileTitle: "我关注工程落地，也关注系统如何真正服务现场业务。",
       profileBody:
-        "我在惟则信息技术（上海）有限公司工作三年，长期参与制造业 MES/EMS、ERP、AI 知识检索、人脸识别、数据中心 BMS/HMI 与能源管理系统建设，工作覆盖需求理解、模块开发、现场联调、数据采集、报表和可视化展示。",
+        "我是赵宇轩，英文名 Zhao Yuxuan，常用 ID 为 Daimaocool。我在惟则信息技术（上海）有限公司工作三年，长期参与制造业 MES/EMS、ERP、AI 知识检索、人脸识别、数据中心 BMS/HMI 与能源管理系统建设，工作覆盖需求理解、模块开发、现场联调、数据采集、报表和可视化展示。",
       eduLabel: "教育背景",
       eduTitle: "重庆第二师范学院",
       eduBody: "计算机科学与技术；专业成绩班级第一、全校第二；校级一、二等奖学金。",
@@ -97,6 +98,7 @@
       navContact: "Contact",
       heroBadge: "Industrial Software / AI Integration / Data Center Energy",
       heroTitle: "Zhao Yuxuan",
+      heroAlias: "赵宇轩 · Daimaocool · Industrial Software Engineer",
       heroSubtitle:
         "Computer Science and Technology graduate with 3 years of enterprise industrial software experience across MES, ERP, EMS, BMS, HMI, AI knowledge retrieval, and face recognition systems.",
       chipOne: "MES / WAPS",
@@ -112,7 +114,7 @@
       profileKicker: "Profile",
       profileTitle: "I care about engineering delivery and how systems serve real on-site operations.",
       profileBody:
-        "I worked at wonthe Information Technology (Shanghai) for three years, focusing on manufacturing MES/EMS, ERP, AI knowledge retrieval, face recognition, data center BMS/HMI, and energy management systems. My work spans business requirements, module development, on-site integration, data acquisition, reports, and visualization.",
+        "I am Zhao Yuxuan (赵宇轩), also known as Daimaocool. I worked at wonthe Information Technology (Shanghai) for three years, focusing on manufacturing MES/EMS, ERP, AI knowledge retrieval, face recognition, data center BMS/HMI, and energy management systems. My work spans business requirements, module development, on-site integration, data acquisition, reports, and visualization.",
       eduLabel: "Education",
       eduTitle: "Chongqing University of Education",
       eduBody: "Computer Science and Technology; ranked first in class and second at university level; first- and second-class university scholarships.",
@@ -185,6 +187,7 @@
       navContact: "連絡",
       heroBadge: "産業ソフトウェア / AI 統合 / データセンターエネルギー管理",
       heroTitle: "趙宇軒",
+      heroAlias: "Zhao Yuxuan · 赵宇轩 · Daimaocool",
       heroSubtitle:
         "コンピュータ科学と技術を専攻し、MES、ERP、EMS、BMS、HMI、AI 知識検索、顔認識システムに関わる 3 年の企業向け産業ソフトウェア開発経験があります。",
       chipOne: "MES / WAPS",
@@ -200,7 +203,7 @@
       profileKicker: "自己紹介",
       profileTitle: "実装だけでなく、システムが現場業務にどう役立つかを重視しています。",
       profileBody:
-        "惟則信息技術（上海）有限公司で 3 年勤務し、製造業 MES/EMS、ERP、AI 知識検索、顔認識、データセンター BMS/HMI、エネルギー管理システムに関わりました。要件理解、モジュール開発、現場連携、データ収集、レポート、可視化まで担当しました。",
+        "Zhao Yuxuan（赵宇轩）、常用 ID は Daimaocool です。惟則信息技術（上海）有限公司で 3 年勤務し、製造業 MES/EMS、ERP、AI 知識検索、顔認識、データセンター BMS/HMI、エネルギー管理システムに関わりました。要件理解、モジュール開発、現場連携、データ収集、レポート、可視化まで担当しました。",
       eduLabel: "学歴",
       eduTitle: "重慶第二師範学院",
       eduBody: "コンピュータ科学と技術；専門成績クラス 1 位、全校 2 位；校内一等・二等奨学金。",

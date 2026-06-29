@@ -240,6 +240,17 @@ h1 {
   text-wrap: balance;
 }
 
+.hero-alias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: -8px 0 18px;
+  color: rgba(24, 48, 47, 0.58);
+  font-size: clamp(15px, 1.6vw, 19px);
+  font-weight: 850;
+}
+
 .hero-subtitle {
   max-width: 680px;
   margin-bottom: 30px;
