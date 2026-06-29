@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lin Yu | Fresh 3D Portfolio</title>
     <meta name="description" content="A fresh multilingual personal page with animated 3D visuals." />
-    <link rel="stylesheet" href="./styles.css?v=9" />
+    <link rel="stylesheet" href="./styles.css?v=10" />
   </head>
   <body>
     <canvas id="space" aria-hidden="true"></canvas>
@@ -69,6 +69,8 @@
         <span>Product Design</span>
         <span>Motion Systems</span>
         <span>Brand Worlds</span>
+        <span>Interface Craft</span>
+        <span>Frontend Systems</span>
       </section>
 
       <section class="section intro" id="profile" aria-labelledby="profile-title">
@@ -116,6 +118,54 @@
         </div>
       </section>
 
+      <section class="section signature" aria-labelledby="signature-title">
+        <div class="section-kicker" data-i18n="signatureKicker">方法</div>
+        <h2 id="signature-title" data-i18n="signatureTitle">让页面不仅好看，还能被记住、被理解、被使用。</h2>
+        <div class="signature-grid">
+          <article>
+            <span>01</span>
+            <h3 data-i18n="signatureOneTitle">空间叙事</h3>
+            <p data-i18n="signatureOneBody">用 3D、层次和动效建立第一眼的记忆点，同时不牺牲阅读效率。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3 data-i18n="signatureTwoTitle">信息结构</h3>
+            <p data-i18n="signatureTwoBody">把个人能力、作品、流程和联系方式拆成清晰路径，减少理解成本。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3 data-i18n="signatureThreeTitle">可发布实现</h3>
+            <p data-i18n="signatureThreeBody">轻量静态架构，无构建依赖，适合 GitHub 与 Cloudflare Pages 自动部署。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section showcase" aria-labelledby="showcase-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker" data-i18n="showcaseKicker">亮点</div>
+            <h2 id="showcase-title" data-i18n="showcaseTitle">细节越多，体验越完整。</h2>
+          </div>
+        </div>
+        <div class="showcase-grid">
+          <div class="showcase-panel panel-large">
+            <p data-i18n="showcaseOneKicker">首屏体验</p>
+            <h3 data-i18n="showcaseOneTitle">实时 3D 粒子、轨道和光束</h3>
+            <span data-i18n="showcaseOneBody">无需外部库，Canvas 本地渲染，加载稳定。</span>
+          </div>
+          <div class="showcase-panel">
+            <p data-i18n="showcaseTwoKicker">多语言</p>
+            <h3 data-i18n="showcaseTwoTitle">中文 / English / 日本語</h3>
+            <span data-i18n="showcaseTwoBody">URL 参数可直达对应语言。</span>
+          </div>
+          <div class="showcase-panel">
+            <p data-i18n="showcaseThreeKicker">交互</p>
+            <h3 data-i18n="showcaseThreeTitle">滚动浮入与卡片高光</h3>
+            <span data-i18n="showcaseThreeBody">移动端保留层次，减少性能压力。</span>
+          </div>
+        </div>
+      </section>
+
       <section class="section stack" aria-labelledby="stack-title">
         <div class="section-kicker" data-i18n="stackKicker">能力</div>
         <h2 id="stack-title" data-i18n="stackTitle">从概念到发布，一条线做到底。</h2>
@@ -144,6 +194,28 @@
         </div>
       </section>
 
+      <section class="section timeline" aria-labelledby="timeline-title">
+        <div class="section-kicker" data-i18n="timelineKicker">节奏</div>
+        <h2 id="timeline-title" data-i18n="timelineTitle">一个清晰的项目推进方式。</h2>
+        <div class="timeline-list">
+          <article>
+            <time>Week 01</time>
+            <h3 data-i18n="timelineOneTitle">定位与内容框架</h3>
+            <p data-i18n="timelineOneBody">明确受众、个人叙事、核心作品和转化路径。</p>
+          </article>
+          <article>
+            <time>Week 02</time>
+            <h3 data-i18n="timelineTwoTitle">视觉与动效原型</h3>
+            <p data-i18n="timelineTwoBody">确定色彩、版式、3D 主视觉、滚动节奏和响应式规则。</p>
+          </article>
+          <article>
+            <time>Week 03</time>
+            <h3 data-i18n="timelineThreeTitle">实现与发布</h3>
+            <p data-i18n="timelineThreeBody">完成静态页面、性能检查、GitHub 提交和 Cloudflare 部署。</p>
+          </article>
+        </div>
+      </section>
+
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <p data-i18n="contactKicker">现在可接新项目</p>
         <h2 id="contact-title" data-i18n="contactTitle">一起做一个让人停下来的数字作品。</h2>
@@ -151,7 +223,7 @@
       </section>
     </main>
 
-    <script src="./ui.js?v=9"></script>
-    <script src="./app.js?v=9"></script>
+    <script src="./ui.js?v=10"></script>
+    <script src="./app.js?v=10"></script>
   </body>
 </html>
