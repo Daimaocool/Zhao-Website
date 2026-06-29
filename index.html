@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>赵宇轩 | Software Engineer</title>
     <meta
       name="description"
-      content="赵宇轩的个人介绍页面，面向考研面试、求职和项目展示。"
+      content="赵宇轩的软件工程个人主页，展示工业软件、AI 集成、数据中心能源管理与项目经历。"
     />
-    <link rel="stylesheet" href="./styles.css?v=11" />
+    <link rel="stylesheet" href="./styles.css?v=13" />
   </head>
   <body>
     <canvas id="space" aria-hidden="true"></canvas>
@@ -16,18 +16,18 @@
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Home">
         <span class="brand-mark">ZYX</span>
-        <span data-i18n="brand">赵宇轩</span>
+        <span data-i18n="brand">Zhao Yuxuan</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#profile" onclick="window.scrollToSection?.('profile')" data-i18n="navProfile">简介</a>
-        <a href="#projects" onclick="window.scrollToSection?.('projects')" data-i18n="navProjects">项目</a>
-        <a href="#skills" onclick="window.scrollToSection?.('skills')" data-i18n="navSkills">能力</a>
-        <a href="#interview" onclick="window.scrollToSection?.('interview')" data-i18n="navInterview">面试</a>
-        <a href="#contact" onclick="window.scrollToSection?.('contact')" data-i18n="navContact">联系</a>
+        <a href="#profile" onclick="window.scrollToSection?.('profile')" data-i18n="navProfile">Profile</a>
+        <a href="#projects" onclick="window.scrollToSection?.('projects')" data-i18n="navProjects">Projects</a>
+        <a href="#skills" onclick="window.scrollToSection?.('skills')" data-i18n="navSkills">Skills</a>
+        <a href="#interview" onclick="window.scrollToSection?.('interview')" data-i18n="navInterview">Strengths</a>
+        <a href="#contact" onclick="window.scrollToSection?.('contact')" data-i18n="navContact">Contact</a>
       </nav>
       <div class="lang-switch" aria-label="Language">
-        <a class="active" href="?lang=zh" data-lang="zh">中</a>
-        <a href="?lang=en" data-lang="en">EN</a>
+        <a href="?lang=zh" data-lang="zh">中</a>
+        <a class="active" href="?lang=en" data-lang="en">EN</a>
         <a href="?lang=ja" data-lang="ja">日</a>
       </div>
     </header>
@@ -35,10 +35,10 @@
     <main id="top">
       <section class="hero resume-hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="hero-badge" data-i18n="heroBadge">工业软件 / AI 集成 / 数据中心能源管理</p>
-          <h1 id="hero-title" data-i18n="heroTitle">赵宇轩</h1>
+          <p class="hero-badge" data-i18n="heroBadge">Industrial Software / AI Integration / Data Center Energy</p>
+          <h1 id="hero-title" data-i18n="heroTitle">Zhao Yuxuan</h1>
           <p class="hero-subtitle" data-i18n="heroSubtitle">
-            计算机科学与技术背景，3 年企业级工业软件开发经验，参与 MES、ERP、EMS、BMS、HMI 与 AI 知识检索系统建设。
+            Computer Science and Technology graduate with 3 years of enterprise industrial software experience across MES, ERP, EMS, BMS, HMI, AI knowledge retrieval, and face recognition systems.
           </p>
           <div class="hero-chips" aria-label="Focus areas">
             <span data-i18n="chipOne">MES / WAPS</span>
@@ -47,20 +47,20 @@
             <span data-i18n="chipFour">SCADA / HMI</span>
           </div>
           <div class="hero-actions">
-            <a class="primary-action" href="#projects" onclick="window.scrollToSection?.('projects')" data-i18n="viewProjects">查看项目</a>
-            <a class="secondary-action" href="#interview" onclick="window.scrollToSection?.('interview')" data-i18n="viewInterview">面试亮点</a>
+            <a class="primary-action" href="#projects" onclick="window.scrollToSection?.('projects')" data-i18n="viewProjects">View Projects</a>
+            <a class="secondary-action" href="#interview" onclick="window.scrollToSection?.('interview')" data-i18n="viewInterview">Core Strengths</a>
           </div>
         </div>
 
         <div class="hero-portrait">
           <img src="./assets/hero-profile.png" alt="抽象科技工程师视觉图" />
           <div class="portrait-card card-top">
-            <strong data-i18n="heroStatOne">年级第 2</strong>
-            <span data-i18n="heroStatOneLabel">专业成绩排名</span>
+            <strong data-i18n="heroStatOne">3 years</strong>
+            <span data-i18n="heroStatOneLabel">Industrial software</span>
           </div>
           <div class="portrait-card card-bottom">
-            <strong data-i18n="heroStatTwo">3 年</strong>
-            <span data-i18n="heroStatTwoLabel">工业软件开发</span>
+            <strong data-i18n="heroStatTwo">5 projects</strong>
+            <span data-i18n="heroStatTwoLabel">MES / AI / BMS</span>
           </div>
         </div>
 
@@ -83,26 +83,26 @@
       </section>
 
       <section class="section intro" id="profile" aria-labelledby="profile-title">
-        <div class="section-kicker" data-i18n="profileKicker">个人简介</div>
-        <h2 id="profile-title" data-i18n="profileTitle">我关注工程落地，也关注系统如何真正服务现场业务。</h2>
+        <div class="section-kicker" data-i18n="profileKicker">Profile</div>
+        <h2 id="profile-title" data-i18n="profileTitle">I care about engineering delivery and how systems serve real on-site operations.</h2>
         <p data-i18n="profileBody">
-          我毕业于重庆第二师范学院计算机科学与技术专业，在校专业成绩排名年级第二，获得校级一、二等奖学金。毕业后在惟则信息技术（上海）有限公司工作三年，长期参与制造业、能源管理、数据中心楼宇自控与 AI 资料检索相关项目。
+          I worked at wonthe Information Technology (Shanghai) for three years, focusing on manufacturing MES/EMS, ERP, AI knowledge retrieval, face recognition, data center BMS/HMI, and energy management systems. My work spans business requirements, module development, on-site integration, data acquisition, reports, and visualization.
         </p>
         <div class="profile-grid">
           <article>
-            <span data-i18n="eduLabel">教育背景</span>
-            <h3><a href="https://wentchina.com/chongqing-university-of-education-chinese/" target="_blank" rel="noopener" data-i18n="eduTitle">重庆第二师范学院</a></h3>
-            <p data-i18n="eduBody">计算机科学与技术；专业成绩年级第 2；校级一、二等奖学金。</p>
+            <span data-i18n="eduLabel">Education</span>
+            <h3><a href="https://wentchina.com/chongqing-university-of-education-chinese/" target="_blank" rel="noopener" data-i18n="eduTitle">Chongqing University of Education</a></h3>
+            <p data-i18n="eduBody">Computer Science and Technology; ranked first in class and second at university level; first- and second-class university scholarships.</p>
           </article>
           <article>
-            <span data-i18n="workLabel">工作经历</span>
-            <h3 data-i18n="workTitle">惟则信息技术（上海）有限公司</h3>
-            <p data-i18n="workBody">3 年工业软件、企业系统、SCADA/HMI、能源管理与 AI 应用开发经验。</p>
+            <span data-i18n="workLabel">Experience</span>
+            <h3 data-i18n="workTitle">wonthe Information Technology (Shanghai) Co., Ltd.</h3>
+            <p data-i18n="workBody">3 years of industrial software, enterprise systems, SCADA/HMI, energy management, and AI application development.</p>
           </article>
           <article>
-            <span data-i18n="targetLabel">适用场景</span>
-            <h3 data-i18n="targetTitle">考研面试 / 求职 / 项目介绍</h3>
-            <p data-i18n="targetBody">突出学习能力、工程能力、跨系统集成经验和面向现场问题的解决能力。</p>
+            <span data-i18n="targetLabel">Engineering Focus</span>
+            <h3 data-i18n="targetTitle">Industrial Software / AI Integration / On-site Systems</h3>
+            <p data-i18n="targetBody">Focused on real project delivery, cross-system integration, on-site problem solving, and practical AI adoption.</p>
           </article>
         </div>
       </section>
@@ -138,12 +138,26 @@
             </div>
             <div class="case-content">
               <p>02 / Manufacturing & AI</p>
-              <h3 data-i18n="caseTwoTitle">先正达 MES 与 WAPS 高级排产</h3>
+              <h3 data-i18n="caseTwoTitle">先正达 MES、WAPS 高级排产与人脸识别</h3>
               <p data-i18n="caseTwoBody">
-                参与 MES 开发工作，开发 WAPS 高级排产能力，围绕生产计划、排产逻辑、现场数据和业务流程完成系统功能建设。
+                参与 MES 开发工作，开发 WAPS 高级排产能力，并参与先正达人脸识别相关功能开发，围绕生产计划、排产逻辑、现场数据、身份识别和业务流程完成系统功能建设。
               </p>
               <div class="tag-row">
-                <span>MES</span><span>WAPS</span><span>Scheduling</span><span>Manufacturing</span>
+                <span>MES</span><span>WAPS</span><span>Scheduling</span><span>Face Recognition</span><span>Manufacturing</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-image visual-face-card" aria-hidden="true"></div>
+            <div class="case-content">
+              <p>03 / Face Recognition</p>
+              <h3 data-i18n="caseFiveTitle">先正达人脸识别功能开发</h3>
+              <p data-i18n="caseFiveBody">
+                参与人脸识别相关业务功能开发，围绕人员身份识别、业务系统联动、现场使用流程和数据记录完善功能闭环。
+              </p>
+              <div class="tag-row">
+                <span>Face Recognition</span><span>Identity</span><span>Workflow</span><span>System Integration</span>
               </div>
             </div>
           </article>
@@ -151,7 +165,7 @@
           <article class="case-card">
             <div class="case-image visual-system-card" aria-hidden="true"></div>
             <div class="case-content">
-              <p>03 / ERP + AI Knowledge</p>
+              <p>04 / ERP + AI Knowledge</p>
               <h3 data-i18n="caseThreeTitle">公司 ERP 模块与 AI 资料检索</h3>
               <p data-i18n="caseThreeBody">
                 参与 ERP 部分模块开发，并接入 AI 能力，涉及 RAG、向量数据库、memory、资料检索等能力，用于提升内部知识查询和业务资料获取效率。
@@ -165,7 +179,7 @@
           <article class="case-card">
             <div class="case-image visual-pda-card" aria-hidden="true"></div>
             <div class="case-content">
-              <p>04 / EMS & PDA</p>
+              <p>05 / EMS & PDA</p>
               <h3 data-i18n="caseFourTitle">广州溢多利 EMS 与 PDA 模块</h3>
               <p data-i18n="caseFourBody">
                 参与 EMS 约一半模块的开发，并负责 PDA 相关功能建设，覆盖现场移动端数据采集、业务流转和系统联动。
@@ -208,14 +222,14 @@
       <section class="section interview" id="interview" aria-labelledby="interview-title">
         <div class="section-heading">
           <div>
-            <div class="section-kicker" data-i18n="interviewKicker">面试表达</div>
-            <h2 id="interview-title" data-i18n="interviewTitle">适合在考研面试和求职中强调的核心叙事。</h2>
+            <div class="section-kicker" data-i18n="interviewKicker">Core Strengths</div>
+            <h2 id="interview-title" data-i18n="interviewTitle">Technical strengths backed by real project delivery.</h2>
           </div>
         </div>
         <div class="talking-points">
           <article>
             <strong data-i18n="pointOneTitle">学习能力强</strong>
-            <p data-i18n="pointOneBody">本科期间专业成绩年级第二，并获得校级一、二等奖学金，能证明持续学习和专业基础。</p>
+            <p data-i18n="pointOneBody">本科期间专业成绩班级第一、全校第二，并获得校级一、二等奖学金，能证明持续学习能力和专业基础。</p>
           </article>
           <article>
             <strong data-i18n="pointTwoTitle">工程经验完整</strong>
@@ -239,7 +253,7 @@
           <article>
             <time data-i18n="timeOne">本科阶段</time>
             <h3 data-i18n="timelineOneTitle">夯实计算机专业基础</h3>
-            <p data-i18n="timelineOneBody">计算机科学与技术专业，专业成绩年级第二，获得校级一、二等奖学金。</p>
+            <p data-i18n="timelineOneBody">计算机科学与技术专业，专业成绩班级第一、全校第二，获得校级一、二等奖学金。</p>
           </article>
           <article>
             <time data-i18n="timeTwo">工作 1-2 年</time>
@@ -260,13 +274,16 @@
       </section>
 
       <section class="contact" id="contact" aria-labelledby="contact-title">
-        <p data-i18n="contactKicker">联系</p>
-        <h2 id="contact-title" data-i18n="contactTitle">可用于考研复试自我介绍、求职主页和项目经历展示。</h2>
-        <a href="#contact" data-i18n="contactCta">可替换为邮箱 / 电话 / 微信</a>
+        <p data-i18n="contactKicker">Contact</p>
+        <h2 id="contact-title" data-i18n="contactTitle">Open to software engineering roles and technical discussions around industrial software, AI integration, and energy management systems.</h2>
+        <div class="contact-methods">
+          <a href="mailto:daimaocool@gmail.com">daimaocool@gmail.com</a>
+          <span>WeChat: daimaocool</span>
+        </div>
       </section>
     </main>
 
-    <script src="./ui.js?v=11"></script>
-    <script src="./app.js?v=11"></script>
+    <script src="./ui.js?v=13"></script>
+    <script src="./app.js?v=13"></script>
   </body>
 </html>

@@ -747,7 +747,8 @@ h1 {
 }
 
 .visual-system-card,
-.visual-pda-card {
+.visual-pda-card,
+.visual-face-card {
   position: relative;
   overflow: hidden;
 }
@@ -766,8 +767,16 @@ h1 {
     linear-gradient(135deg, #f8fffb, #eefbf8);
 }
 
+.visual-face-card {
+  background:
+    radial-gradient(circle at 50% 36%, rgba(108, 184, 255, 0.26), transparent 25%),
+    radial-gradient(circle at 30% 74%, rgba(82, 201, 162, 0.28), transparent 28%),
+    linear-gradient(135deg, #fbfff9, #eef7ff);
+}
+
 .visual-system-card::before,
-.visual-pda-card::before {
+.visual-pda-card::before,
+.visual-face-card::before {
   position: absolute;
   inset: 18%;
   content: "";
@@ -781,7 +790,8 @@ h1 {
 }
 
 .visual-system-card::after,
-.visual-pda-card::after {
+.visual-pda-card::after,
+.visual-face-card::after {
   position: absolute;
   left: 18%;
   right: 18%;
@@ -791,6 +801,28 @@ h1 {
   border-radius: 999px;
   background: var(--leaf);
   box-shadow: 0 42px 0 var(--sky), 0 -42px 0 var(--rose);
+}
+
+.visual-face-card::before {
+  inset: 22%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 36%, rgba(24, 48, 47, 0.08) 0 10%, transparent 11%),
+    radial-gradient(circle at 38% 44%, rgba(24, 48, 47, 0.12) 0 4%, transparent 5%),
+    radial-gradient(circle at 62% 44%, rgba(24, 48, 47, 0.12) 0 4%, transparent 5%),
+    linear-gradient(rgba(24, 48, 47, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 48, 47, 0.08) 1px, transparent 1px);
+  background-size: auto, auto, auto, 22px 22px, 22px 22px;
+  transform: none;
+}
+
+.visual-face-card::after {
+  left: 16%;
+  right: 16%;
+  top: 50%;
+  height: 1px;
+  background: var(--sky);
+  box-shadow: 0 34px 0 var(--leaf), 0 -34px 0 var(--rose), 0 0 28px rgba(108, 184, 255, 0.45);
 }
 
 .case-content {
@@ -1093,6 +1125,35 @@ h1 {
   border-bottom: 2px solid currentColor;
   font-size: clamp(20px, 3vw, 36px);
   font-weight: 950;
+}
+
+.contact-methods {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.contact-methods a,
+.contact-methods span {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  border: 1px solid rgba(24, 48, 47, 0.13);
+  border-radius: 999px;
+  padding: 0 18px;
+  color: #18302f;
+  background: rgba(255, 255, 255, 0.58);
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 900;
+  box-shadow: 0 14px 34px rgba(55, 117, 111, 0.1);
+}
+
+.contact-methods a {
+  margin-top: 0;
+  border-bottom: 1px solid rgba(24, 48, 47, 0.13);
 }
 
 .timeline {
