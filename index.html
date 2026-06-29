@@ -3,21 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lin Yu | Fresh 3D Portfolio</title>
-    <meta name="description" content="A fresh multilingual personal page with animated 3D visuals." />
-    <link rel="stylesheet" href="./styles.css?v=10" />
+    <title>赵宇轩 | Software Engineer</title>
+    <meta
+      name="description"
+      content="赵宇轩的个人介绍页面，面向考研面试、求职和项目展示。"
+    />
+    <link rel="stylesheet" href="./styles.css?v=11" />
   </head>
   <body>
     <canvas id="space" aria-hidden="true"></canvas>
 
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Home">
-        <span class="brand-mark">LY</span>
-        <span data-i18n="brand">林屿</span>
+        <span class="brand-mark">ZYX</span>
+        <span data-i18n="brand">赵宇轩</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#work" onclick="window.scrollToSection?.('work')" data-i18n="navWork">作品</a>
-        <a href="#profile" onclick="window.scrollToSection?.('profile')" data-i18n="navProfile">关于</a>
+        <a href="#profile" onclick="window.scrollToSection?.('profile')" data-i18n="navProfile">简介</a>
+        <a href="#projects" onclick="window.scrollToSection?.('projects')" data-i18n="navProjects">项目</a>
+        <a href="#skills" onclick="window.scrollToSection?.('skills')" data-i18n="navSkills">能力</a>
+        <a href="#interview" onclick="window.scrollToSection?.('interview')" data-i18n="navInterview">面试</a>
         <a href="#contact" onclick="window.scrollToSection?.('contact')" data-i18n="navContact">联系</a>
       </nav>
       <div class="lang-switch" aria-label="Language">
@@ -28,202 +33,240 @@
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero resume-hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <h1 id="hero-title" data-i18n="heroTitle">林屿</h1>
+          <p class="hero-badge" data-i18n="heroBadge">工业软件 / AI 集成 / 数据中心能源管理</p>
+          <h1 id="hero-title" data-i18n="heroTitle">赵宇轩</h1>
           <p class="hero-subtitle" data-i18n="heroSubtitle">
-            用产品思维、影像感和工程能力，制作轻盈、清晰、有记忆点的数字体验。
+            计算机科学与技术背景，3 年企业级工业软件开发经验，参与 MES、ERP、EMS、BMS、HMI 与 AI 知识检索系统建设。
           </p>
           <div class="hero-chips" aria-label="Focus areas">
-            <span data-i18n="chipOne">交互设计</span>
-            <span data-i18n="chipTwo">3D 动效</span>
-            <span data-i18n="chipThree">前端实现</span>
+            <span data-i18n="chipOne">MES / WAPS</span>
+            <span data-i18n="chipTwo">BMS / EMS</span>
+            <span data-i18n="chipThree">AI + RAG</span>
+            <span data-i18n="chipFour">SCADA / HMI</span>
           </div>
           <div class="hero-actions">
-            <a class="primary-action" href="#work" onclick="window.scrollToSection?.('work')" data-i18n="viewWork">查看作品</a>
-            <a class="secondary-action" href="#contact" onclick="window.scrollToSection?.('contact')" data-i18n="sayHello">聊聊合作</a>
+            <a class="primary-action" href="#projects" onclick="window.scrollToSection?.('projects')" data-i18n="viewProjects">查看项目</a>
+            <a class="secondary-action" href="#interview" onclick="window.scrollToSection?.('interview')" data-i18n="viewInterview">面试亮点</a>
           </div>
         </div>
-        <div class="hero-meta" aria-label="Highlights">
-          <div>
-            <span data-i18n="metaOneValue">8 年</span>
-            <p data-i18n="metaOneLabel">设计与开发</p>
+
+        <div class="hero-portrait">
+          <img src="./assets/hero-profile.png" alt="抽象科技工程师视觉图" />
+          <div class="portrait-card card-top">
+            <strong data-i18n="heroStatOne">年级第 2</strong>
+            <span data-i18n="heroStatOneLabel">专业成绩排名</span>
           </div>
-          <div>
-            <span data-i18n="metaTwoValue">42+</span>
-            <p data-i18n="metaTwoLabel">发布项目</p>
-          </div>
-          <div>
-            <span data-i18n="metaThreeValue">全球</span>
-            <p data-i18n="metaThreeLabel">远程协作</p>
+          <div class="portrait-card card-bottom">
+            <strong data-i18n="heroStatTwo">3 年</strong>
+            <span data-i18n="heroStatTwoLabel">工业软件开发</span>
           </div>
         </div>
+
         <a class="scroll-cue" href="#profile" onclick="window.scrollToSection?.('profile')" aria-label="Scroll">
           <span></span>
         </a>
       </section>
 
       <section class="ticker" aria-label="Capabilities">
-        <span>Creative Direction</span>
-        <span>WebGL</span>
-        <span>Product Design</span>
-        <span>Motion Systems</span>
-        <span>Brand Worlds</span>
-        <span>Interface Craft</span>
-        <span>Frontend Systems</span>
+        <span>MES</span>
+        <span>WAPS</span>
+        <span>ERP</span>
+        <span>AI RAG</span>
+        <span>Vector Database</span>
+        <span>EMS</span>
+        <span>BMS</span>
+        <span>PlantSCADA</span>
+        <span>Vijeo HMI</span>
+        <span>OPC</span>
       </section>
 
       <section class="section intro" id="profile" aria-labelledby="profile-title">
-        <div class="section-kicker" data-i18n="profileKicker">关于</div>
-        <h2 id="profile-title" data-i18n="profileTitle">把复杂的想法，变成清晰、漂亮、可用的界面。</h2>
+        <div class="section-kicker" data-i18n="profileKicker">个人简介</div>
+        <h2 id="profile-title" data-i18n="profileTitle">我关注工程落地，也关注系统如何真正服务现场业务。</h2>
         <p data-i18n="profileBody">
-          我关注人如何感知信息，也关注系统如何稳定运行。我的工作横跨品牌、交互、前端工程与 3D 视觉，喜欢把抽象叙事做成可触摸的体验。
+          我毕业于重庆第二师范学院计算机科学与技术专业，在校专业成绩排名年级第二，获得校级一、二等奖学金。毕业后在惟则信息技术（上海）有限公司工作三年，长期参与制造业、能源管理、数据中心楼宇自控与 AI 资料检索相关项目。
         </p>
+        <div class="profile-grid">
+          <article>
+            <span data-i18n="eduLabel">教育背景</span>
+            <h3><a href="https://wentchina.com/chongqing-university-of-education-chinese/" target="_blank" rel="noopener" data-i18n="eduTitle">重庆第二师范学院</a></h3>
+            <p data-i18n="eduBody">计算机科学与技术；专业成绩年级第 2；校级一、二等奖学金。</p>
+          </article>
+          <article>
+            <span data-i18n="workLabel">工作经历</span>
+            <h3 data-i18n="workTitle">惟则信息技术（上海）有限公司</h3>
+            <p data-i18n="workBody">3 年工业软件、企业系统、SCADA/HMI、能源管理与 AI 应用开发经验。</p>
+          </article>
+          <article>
+            <span data-i18n="targetLabel">适用场景</span>
+            <h3 data-i18n="targetTitle">考研面试 / 求职 / 项目介绍</h3>
+            <p data-i18n="targetBody">突出学习能力、工程能力、跨系统集成经验和面向现场问题的解决能力。</p>
+          </article>
+        </div>
       </section>
 
-      <section class="section work" id="work" aria-labelledby="work-title">
+      <section class="section projects" id="projects" aria-labelledby="projects-title">
         <div class="section-heading">
           <div>
-            <div class="section-kicker" data-i18n="workKicker">精选作品</div>
-            <h2 id="work-title" data-i18n="workTitle">近期项目</h2>
+            <div class="section-kicker" data-i18n="projectsKicker">核心项目</div>
+            <h2 id="projects-title" data-i18n="projectsTitle">参与过真实业务系统，也独立完成过关键模块。</h2>
           </div>
-          <a href="#contact" data-i18n="workCta">合作咨询</a>
         </div>
 
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-visual visual-a"></div>
-            <div class="project-content">
-              <p>01 / AI Interface</p>
-              <h3 data-i18n="projectOneTitle">面向研究团队的知识工作台</h3>
-              <span data-i18n="projectOneMeta">产品策略 / 原型 / 前端</span>
+        <div class="case-list">
+          <article class="case-card featured-case">
+            <div class="case-image">
+              <img src="./assets/datacenter-bms.png" alt="数据中心 BMS 与能源管理视觉图" />
+            </div>
+            <div class="case-content">
+              <p>01 / Data Center BMS & Energy</p>
+              <h3 data-i18n="caseOneTitle">泰国 DAMAC 数据中心 BMS 与能源管理系统</h3>
+              <p data-i18n="caseOneBody">
+                参与 EPMS、CPMS、fitout 核心机房 BMS、HMI 的开发和测试，使用 Schneider PlantSCADA 与 Vijeo（HMIET6700）。独立完成能源管理系统，包括 OPC 数据采集、能源报表和可视化展示。
+              </p>
+              <div class="tag-row">
+                <span>PlantSCADA</span><span>Vijeo</span><span>OPC</span><span>BMS</span><span>Energy Report</span>
+              </div>
             </div>
           </article>
-          <article class="project-card">
-            <div class="project-visual visual-b"></div>
-            <div class="project-content">
-              <p>02 / Spatial Web</p>
-              <h3 data-i18n="projectTwoTitle">沉浸式品牌发布页面</h3>
-              <span data-i18n="projectTwoMeta">WebGL / 动效 / 视觉系统</span>
+
+          <article class="case-card">
+            <div class="case-image">
+              <img src="./assets/mes-ai.png" alt="MES 排产与 AI 系统视觉图" />
+            </div>
+            <div class="case-content">
+              <p>02 / Manufacturing & AI</p>
+              <h3 data-i18n="caseTwoTitle">先正达 MES 与 WAPS 高级排产</h3>
+              <p data-i18n="caseTwoBody">
+                参与 MES 开发工作，开发 WAPS 高级排产能力，围绕生产计划、排产逻辑、现场数据和业务流程完成系统功能建设。
+              </p>
+              <div class="tag-row">
+                <span>MES</span><span>WAPS</span><span>Scheduling</span><span>Manufacturing</span>
+              </div>
             </div>
           </article>
-          <article class="project-card">
-            <div class="project-visual visual-c"></div>
-            <div class="project-content">
-              <p>03 / Data Story</p>
-              <h3 data-i18n="projectThreeTitle">城市数据叙事仪表盘</h3>
-              <span data-i18n="projectThreeMeta">信息设计 / 地图 / 数据可视化</span>
+
+          <article class="case-card">
+            <div class="case-image visual-system-card" aria-hidden="true"></div>
+            <div class="case-content">
+              <p>03 / ERP + AI Knowledge</p>
+              <h3 data-i18n="caseThreeTitle">公司 ERP 模块与 AI 资料检索</h3>
+              <p data-i18n="caseThreeBody">
+                参与 ERP 部分模块开发，并接入 AI 能力，涉及 RAG、向量数据库、memory、资料检索等能力，用于提升内部知识查询和业务资料获取效率。
+              </p>
+              <div class="tag-row">
+                <span>ERP</span><span>RAG</span><span>Vector DB</span><span>Memory</span><span>AI Search</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-image visual-pda-card" aria-hidden="true"></div>
+            <div class="case-content">
+              <p>04 / EMS & PDA</p>
+              <h3 data-i18n="caseFourTitle">广州溢多利 EMS 与 PDA 模块</h3>
+              <p data-i18n="caseFourBody">
+                参与 EMS 约一半模块的开发，并负责 PDA 相关功能建设，覆盖现场移动端数据采集、业务流转和系统联动。
+              </p>
+              <div class="tag-row">
+                <span>EMS</span><span>PDA</span><span>Mobile Workflow</span><span>Data Collection</span>
+              </div>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="section signature" aria-labelledby="signature-title">
-        <div class="section-kicker" data-i18n="signatureKicker">方法</div>
-        <h2 id="signature-title" data-i18n="signatureTitle">让页面不仅好看，还能被记住、被理解、被使用。</h2>
-        <div class="signature-grid">
+      <section class="section skills" id="skills" aria-labelledby="skills-title">
+        <div class="section-kicker" data-i18n="skillsKicker">能力结构</div>
+        <h2 id="skills-title" data-i18n="skillsTitle">我的优势在于把业务、系统和现场数据连起来。</h2>
+        <div class="skill-matrix">
           <article>
             <span>01</span>
-            <h3 data-i18n="signatureOneTitle">空间叙事</h3>
-            <p data-i18n="signatureOneBody">用 3D、层次和动效建立第一眼的记忆点，同时不牺牲阅读效率。</p>
+            <h3 data-i18n="skillOneTitle">工业软件开发</h3>
+            <p data-i18n="skillOneBody">MES、EMS、ERP 模块、排产系统、PDA 移动端与企业内部系统功能开发。</p>
           </article>
           <article>
             <span>02</span>
-            <h3 data-i18n="signatureTwoTitle">信息结构</h3>
-            <p data-i18n="signatureTwoBody">把个人能力、作品、流程和联系方式拆成清晰路径，减少理解成本。</p>
+            <h3 data-i18n="skillTwoTitle">SCADA / HMI / BMS</h3>
+            <p data-i18n="skillTwoBody">熟悉数据中心 BMS、EPMS、CPMS、PlantSCADA、Vijeo HMI 与现场系统测试。</p>
           </article>
           <article>
             <span>03</span>
-            <h3 data-i18n="signatureThreeTitle">可发布实现</h3>
-            <p data-i18n="signatureThreeBody">轻量静态架构，无构建依赖，适合 GitHub 与 Cloudflare Pages 自动部署。</p>
+            <h3 data-i18n="skillThreeTitle">AI 工具与知识检索</h3>
+            <p data-i18n="skillThreeBody">熟练运用 AI，理解 RAG、向量数据库、memory、资料检索和企业知识库落地方式。</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3 data-i18n="skillFourTitle">数据采集与可视化</h3>
+            <p data-i18n="skillFourBody">独立完成 OPC 数据采集、能源报表、可视化展示和面向管理端的数据呈现。</p>
           </article>
         </div>
       </section>
 
-      <section class="section showcase" aria-labelledby="showcase-title">
+      <section class="section interview" id="interview" aria-labelledby="interview-title">
         <div class="section-heading">
           <div>
-            <div class="section-kicker" data-i18n="showcaseKicker">亮点</div>
-            <h2 id="showcase-title" data-i18n="showcaseTitle">细节越多，体验越完整。</h2>
+            <div class="section-kicker" data-i18n="interviewKicker">面试表达</div>
+            <h2 id="interview-title" data-i18n="interviewTitle">适合在考研面试和求职中强调的核心叙事。</h2>
           </div>
         </div>
-        <div class="showcase-grid">
-          <div class="showcase-panel panel-large">
-            <p data-i18n="showcaseOneKicker">首屏体验</p>
-            <h3 data-i18n="showcaseOneTitle">实时 3D 粒子、轨道和光束</h3>
-            <span data-i18n="showcaseOneBody">无需外部库，Canvas 本地渲染，加载稳定。</span>
-          </div>
-          <div class="showcase-panel">
-            <p data-i18n="showcaseTwoKicker">多语言</p>
-            <h3 data-i18n="showcaseTwoTitle">中文 / English / 日本語</h3>
-            <span data-i18n="showcaseTwoBody">URL 参数可直达对应语言。</span>
-          </div>
-          <div class="showcase-panel">
-            <p data-i18n="showcaseThreeKicker">交互</p>
-            <h3 data-i18n="showcaseThreeTitle">滚动浮入与卡片高光</h3>
-            <span data-i18n="showcaseThreeBody">移动端保留层次，减少性能压力。</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section stack" aria-labelledby="stack-title">
-        <div class="section-kicker" data-i18n="stackKicker">能力</div>
-        <h2 id="stack-title" data-i18n="stackTitle">从概念到发布，一条线做到底。</h2>
-        <div class="process-strip" aria-label="Process">
-          <span data-i18n="processOne">发现</span>
-          <span data-i18n="processTwo">原型</span>
-          <span data-i18n="processThree">视觉</span>
-          <span data-i18n="processFour">上线</span>
-        </div>
-        <div class="stack-list">
-          <div>
-            <span>01</span>
-            <h3 data-i18n="stackOneTitle">体验策略</h3>
-            <p data-i18n="stackOneBody">定位、叙事、用户路径和核心转化。</p>
-          </div>
-          <div>
-            <span>02</span>
-            <h3 data-i18n="stackTwoTitle">界面设计</h3>
-            <p data-i18n="stackTwoBody">设计系统、动效规范和高保真原型。</p>
-          </div>
-          <div>
-            <span>03</span>
-            <h3 data-i18n="stackThreeTitle">前端实现</h3>
-            <p data-i18n="stackThreeBody">响应式页面、3D 互动和性能优化。</p>
-          </div>
+        <div class="talking-points">
+          <article>
+            <strong data-i18n="pointOneTitle">学习能力强</strong>
+            <p data-i18n="pointOneBody">本科期间专业成绩年级第二，并获得校级一、二等奖学金，能证明持续学习和专业基础。</p>
+          </article>
+          <article>
+            <strong data-i18n="pointTwoTitle">工程经验完整</strong>
+            <p data-i18n="pointTwoBody">从制造业 MES/EMS 到数据中心 BMS，再到 ERP 与 AI 检索，经历过多个真实业务系统。</p>
+          </article>
+          <article>
+            <strong data-i18n="pointThreeTitle">能独立承担模块</strong>
+            <p data-i18n="pointThreeBody">独立完成过泰国 DAMAC 数据中心能源管理系统，具备从数据采集到报表展示的闭环能力。</p>
+          </article>
+          <article>
+            <strong data-i18n="pointFourTitle">关注新技术落地</strong>
+            <p data-i18n="pointFourBody">熟练使用 AI，并参与 RAG、向量数据库、memory 等能力接入，能把新技术转化为业务效率。</p>
+          </article>
         </div>
       </section>
 
       <section class="section timeline" aria-labelledby="timeline-title">
-        <div class="section-kicker" data-i18n="timelineKicker">节奏</div>
-        <h2 id="timeline-title" data-i18n="timelineTitle">一个清晰的项目推进方式。</h2>
+        <div class="section-kicker" data-i18n="timelineKicker">成长路径</div>
+        <h2 id="timeline-title" data-i18n="timelineTitle">从专业基础到工程现场，再到 AI 应用集成。</h2>
         <div class="timeline-list">
           <article>
-            <time>Week 01</time>
-            <h3 data-i18n="timelineOneTitle">定位与内容框架</h3>
-            <p data-i18n="timelineOneBody">明确受众、个人叙事、核心作品和转化路径。</p>
+            <time data-i18n="timeOne">本科阶段</time>
+            <h3 data-i18n="timelineOneTitle">夯实计算机专业基础</h3>
+            <p data-i18n="timelineOneBody">计算机科学与技术专业，专业成绩年级第二，获得校级一、二等奖学金。</p>
           </article>
           <article>
-            <time>Week 02</time>
-            <h3 data-i18n="timelineTwoTitle">视觉与动效原型</h3>
-            <p data-i18n="timelineTwoBody">确定色彩、版式、3D 主视觉、滚动节奏和响应式规则。</p>
+            <time data-i18n="timeTwo">工作 1-2 年</time>
+            <h3 data-i18n="timelineTwoTitle">参与制造业系统开发</h3>
+            <p data-i18n="timelineTwoBody">参与先正达 MES/WAPS、ERP 模块、广州溢多利 EMS 和 PDA 等系统建设。</p>
           </article>
           <article>
-            <time>Week 03</time>
-            <h3 data-i18n="timelineThreeTitle">实现与发布</h3>
-            <p data-i18n="timelineThreeBody">完成静态页面、性能检查、GitHub 提交和 Cloudflare 部署。</p>
+            <time data-i18n="timeThree">工作 3 年</time>
+            <h3 data-i18n="timelineThreeTitle">深入数据中心与能源管理</h3>
+            <p data-i18n="timelineThreeBody">参与泰国 DAMAC 数据中心 BMS/HMI 开发测试，并独立完成能源管理系统。</p>
+          </article>
+          <article>
+            <time data-i18n="timeFour">现在</time>
+            <h3 data-i18n="timelineFourTitle">面向 AI + 工业软件方向继续深化</h3>
+            <p data-i18n="timelineFourBody">希望在研究生学习或下一份工作中，将工程经验与 AI、数据系统、智能制造结合得更深入。</p>
           </article>
         </div>
       </section>
 
       <section class="contact" id="contact" aria-labelledby="contact-title">
-        <p data-i18n="contactKicker">现在可接新项目</p>
-        <h2 id="contact-title" data-i18n="contactTitle">一起做一个让人停下来的数字作品。</h2>
-        <a href="mailto:hello@example.com" data-i18n="contactCta">hello@example.com</a>
+        <p data-i18n="contactKicker">联系</p>
+        <h2 id="contact-title" data-i18n="contactTitle">可用于考研复试自我介绍、求职主页和项目经历展示。</h2>
+        <a href="#contact" data-i18n="contactCta">可替换为邮箱 / 电话 / 微信</a>
       </section>
     </main>
 
-    <script src="./ui.js?v=10"></script>
-    <script src="./app.js?v=10"></script>
+    <script src="./ui.js?v=11"></script>
+    <script src="./app.js?v=11"></script>
   </body>
 </html>
