@@ -195,12 +195,13 @@ a {
 .lang-switch {
   justify-self: end;
   display: inline-grid;
-  grid-template-columns: repeat(3, 42px);
-  width: 120px;
-  padding: 2px;
+  grid-template-columns: repeat(3, 36px);
+  gap: 3px;
+  width: auto;
+  padding: 4px;
   border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.42);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.54);
   pointer-events: auto;
 }
 
@@ -208,10 +209,11 @@ a {
 .lang-switch button {
   display: grid;
   min-width: 0;
+  width: 36px;
   height: 30px;
   place-items: center;
   border: 0;
-  border-radius: 999px;
+  border-radius: 7px;
   color: var(--muted);
   background: transparent;
   font: inherit;
@@ -224,26 +226,29 @@ a {
 .lang-switch button.active {
   color: white;
   background: #18302f;
+  box-shadow: 0 6px 14px rgba(24, 48, 47, 0.14);
 }
 
 .hero {
   position: relative;
+  width: min(100%, 1480px);
+  margin: 0 auto;
   min-height: 92svh;
   display: grid;
-  grid-template-columns: minmax(0, 1.16fr) minmax(250px, 0.5fr);
+  grid-template-columns: minmax(500px, 0.95fr) minmax(360px, 0.6fr);
   align-items: center;
-  gap: clamp(30px, 5vw, 78px);
+  gap: clamp(26px, 3vw, 46px);
   padding: 118px var(--page-gutter) 58px;
 }
 
 .hero-copy {
-  max-width: 830px;
-  padding-left: clamp(28px, 5.2vw, 86px);
+  max-width: 760px;
+  padding-left: clamp(56px, 7vw, 126px);
   animation: heroIn 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .resume-hero {
-  grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.58fr);
+  grid-template-columns: minmax(500px, 0.95fr) minmax(360px, 0.6fr);
   align-items: center;
 }
 
@@ -414,8 +419,8 @@ h1 {
   display: grid;
   gap: 16px;
   align-self: center;
-  justify-self: end;
-  width: min(100%, 520px);
+  justify-self: start;
+  width: min(100%, 500px);
 }
 
 .hero-portrait {
@@ -2297,8 +2302,14 @@ h1 {
   }
 
   .lang-switch {
-    grid-template-columns: repeat(3, 38px);
-    width: 114px;
+    grid-template-columns: repeat(3, 34px);
+    gap: 3px;
+    width: auto;
+  }
+
+  .lang-switch a,
+  .lang-switch button {
+    width: 34px;
   }
 
   .hero {
