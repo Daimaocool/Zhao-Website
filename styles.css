@@ -766,7 +766,55 @@ h1 {
   position: relative;
   overflow: hidden;
   min-height: 330px;
-  background: linear-gradient(135deg, #eefbf8, #fff8ef);
+  background:
+    radial-gradient(circle at 70% 20%, rgba(82, 201, 162, 0.22), transparent 34%),
+    linear-gradient(135deg, #f8fcff, #e9f5fb 58%, #dff5f2);
+}
+
+.project-art {
+  isolation: isolate;
+}
+
+.project-art::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent 36%),
+    radial-gradient(circle at 72% 22%, rgba(82, 201, 162, 0.14), transparent 34%),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04), rgba(223, 246, 250, 0.16));
+  mix-blend-mode: screen;
+}
+
+.project-art::after {
+  position: absolute;
+  inset: 16px;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+  border: 1px solid rgba(86, 184, 212, 0.28);
+  border-radius: 8px;
+  box-shadow:
+    inset 0 0 28px rgba(255, 255, 255, 0.24),
+    0 0 32px rgba(108, 184, 255, 0.1);
+}
+
+.project-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 330px;
+  object-fit: cover;
+  filter: saturate(1.04) contrast(1.02) brightness(1.03);
+  transform: scale(1.01);
+  transition: transform 720ms ease, filter 720ms ease;
+}
+
+.case-card:hover .project-art img {
+  filter: saturate(1.1) contrast(1.04) brightness(1.04);
+  transform: scale(1.055);
 }
 
 .case-visual {
@@ -1937,6 +1985,10 @@ h1 {
     min-height: 300px;
   }
 
+  .project-art img {
+    min-height: 300px;
+  }
+
   .bms-layout,
   .schedule-board,
   .face-panel,
@@ -2045,6 +2097,10 @@ h1 {
     min-height: 230px;
   }
 
+  .project-art img {
+    min-height: 230px;
+  }
+
   .case-visual {
     padding: 16px;
   }
@@ -2149,6 +2205,7 @@ h1 {
   }
 
   .skill-matrix article::after,
+  .project-art img,
   .profile-grid article,
   .skill-matrix article,
   .talking-points article {
