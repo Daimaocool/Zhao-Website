@@ -9,6 +9,9 @@
       content="Zhao Yuxuan, also searched as Yuxuan Zhao and 赵宇轩, is Daimaocool: a software engineer focused on industrial software, MES, ERP, AI knowledge retrieval, data center BMS/HMI, OPC data acquisition, and energy management systems."
     />
     <meta name="author" content="Zhao Yuxuan" />
+    <meta name="creator" content="Zhao Yuxuan, Yuxuan Zhao, 赵宇轩, Daimaocool" />
+    <meta name="application-name" content="Zhao Yuxuan Portfolio" />
+    <meta name="subject" content="Zhao Yuxuan, Yuxuan Zhao, 赵宇轩, Daimaocool software engineering portfolio" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta
       name="keywords"
@@ -35,6 +38,7 @@
     <meta property="og:locale:alternate" content="ja_JP" />
     <meta property="profile:first_name" content="Yuxuan" />
     <meta property="profile:last_name" content="Zhao" />
+    <meta property="profile:username" content="Daimaocool" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Zhao Yuxuan (Yuxuan Zhao, 赵宇轩) | Daimaocool | Industrial Software Engineer" />
     <meta
@@ -42,7 +46,7 @@
       content="Zhao Yuxuan / Yuxuan Zhao / 赵宇轩 / Daimaocool. Industrial software, AI integration, data center BMS/HMI, OPC data acquisition, and energy management project experience."
     />
     <meta name="twitter:image" content="https://zhao.hiyeup.com/assets/hero-profile.png" />
-    <link rel="stylesheet" href="./styles.css?v=19" />
+    <link rel="stylesheet" href="./styles.css?v=22" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -58,7 +62,20 @@
             "image": "https://zhao.hiyeup.com/assets/hero-profile.png",
             "email": "mailto:daimaocool@gmail.com",
             "jobTitle": "Software Engineer",
+            "disambiguatingDescription": "Zhao Yuxuan, also written as Yuxuan Zhao and 赵宇轩, uses the online ID Daimaocool.",
             "description": "Zhao Yuxuan, also searched as Yuxuan Zhao and 赵宇轩, is Daimaocool: a software engineer focused on industrial software, MES, ERP, AI knowledge retrieval, data center BMS/HMI, OPC data acquisition, and energy management systems.",
+            "identifier": [
+              {
+                "@type": "PropertyValue",
+                "propertyID": "Online ID",
+                "value": "Daimaocool"
+              },
+              {
+                "@type": "PropertyValue",
+                "propertyID": "Chinese name",
+                "value": "赵宇轩"
+              }
+            ],
             "sameAs": ["https://github.com/Daimaocool"],
             "knowsLanguage": ["English", "Chinese", "Japanese"],
             "mainEntityOfPage": "https://zhao.hiyeup.com/",
@@ -91,7 +108,7 @@
             "@id": "https://zhao.hiyeup.com/#website",
             "url": "https://zhao.hiyeup.com/",
             "name": "Zhao Yuxuan Portfolio",
-            "alternateName": ["Yuxuan Zhao Portfolio", "赵宇轩个人网站", "Daimaocool"],
+            "alternateName": ["Yuxuan Zhao Portfolio", "ZHAO YUXUAN Portfolio", "YUXUAN ZHAO Portfolio", "赵宇轩个人网站", "Daimaocool"],
             "publisher": { "@id": "https://zhao.hiyeup.com/#person" },
             "inLanguage": ["en", "zh-CN", "ja"]
           },
@@ -101,6 +118,7 @@
             "url": "https://zhao.hiyeup.com/",
             "name": "Zhao Yuxuan (Yuxuan Zhao, 赵宇轩) Portfolio",
             "description": "Personal portfolio for Zhao Yuxuan, also searched as Yuxuan Zhao, 赵宇轩, and Daimaocool.",
+            "keywords": ["Zhao Yuxuan", "Yuxuan Zhao", "赵宇轩", "Daimaocool", "Industrial Software Engineer", "MES", "ERP", "BMS", "AI RAG"],
             "inLanguage": "en",
             "isPartOf": { "@id": "https://zhao.hiyeup.com/#website" },
             "about": { "@id": "https://zhao.hiyeup.com/#person" },
@@ -123,11 +141,11 @@
         <span data-i18n="brand">Zhao Yuxuan</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#profile" onclick="window.scrollToSection?.('profile')" data-i18n="navProfile">Profile</a>
-        <a href="#projects" onclick="window.scrollToSection?.('projects')" data-i18n="navProjects">Projects</a>
-        <a href="#skills" onclick="window.scrollToSection?.('skills')" data-i18n="navSkills">Skills</a>
-        <a href="#interview" onclick="window.scrollToSection?.('interview')" data-i18n="navInterview">Strengths</a>
-        <a href="#contact" onclick="window.scrollToSection?.('contact')" data-i18n="navContact">Contact</a>
+        <a href="#profile" onclick="window.scrollToSection?.('profile')" data-section="profile" data-i18n="navProfile">Profile</a>
+        <a href="#projects" onclick="window.scrollToSection?.('projects')" data-section="projects" data-i18n="navProjects">Projects</a>
+        <a href="#skills" onclick="window.scrollToSection?.('skills')" data-section="skills" data-i18n="navSkills">Skills</a>
+        <a href="#interview" onclick="window.scrollToSection?.('interview')" data-section="interview" data-i18n="navInterview">Strengths</a>
+        <a href="#contact" onclick="window.scrollToSection?.('contact')" data-section="contact" data-i18n="navContact">Contact</a>
       </nav>
       <div class="lang-switch" aria-label="Language">
         <a href="?lang=zh" data-lang="zh">中</a>
@@ -157,21 +175,31 @@
           </div>
         </div>
 
-        <div class="hero-portrait">
-          <img src="./assets/hero-profile.png" alt="Zhao Yuxuan industrial software engineer visual" />
-          <div class="portrait-card card-top">
-            <strong data-i18n="heroStatOne">3 years</strong>
-            <span data-i18n="heroStatOneLabel">Industrial software</span>
+        <div class="hero-visual">
+          <div class="hero-portrait">
+            <img src="./assets/hero-profile.png" alt="Zhao Yuxuan industrial software engineer visual" />
+            <div class="portrait-card card-top">
+              <strong data-i18n="heroStatOne">3 years</strong>
+              <span data-i18n="heroStatOneLabel">Industrial software</span>
+            </div>
+            <div class="portrait-card card-bottom">
+              <strong data-i18n="heroStatTwo">5 projects</strong>
+              <span data-i18n="heroStatTwoLabel">MES / AI / BMS</span>
+            </div>
           </div>
-          <div class="portrait-card card-bottom">
-            <strong data-i18n="heroStatTwo">5 projects</strong>
-            <span data-i18n="heroStatTwoLabel">MES / AI / BMS</span>
-          </div>
-        </div>
 
-        <a class="scroll-cue" href="#profile" onclick="window.scrollToSection?.('profile')" aria-label="Scroll">
-          <span></span>
-        </a>
+          <aside class="terminal-sim" aria-label="Terminal simulation">
+            <div class="terminal-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>ops-sim</strong>
+            </div>
+            <div class="terminal-body" data-terminal-body aria-live="polite">
+              <p><span>$</span> boot terminal simulation</p>
+            </div>
+          </aside>
+        </div>
       </section>
 
       <section class="ticker" aria-label="Capabilities">
@@ -385,17 +413,34 @@
       </section>
 
       <section class="contact" id="contact" aria-labelledby="contact-title">
-        <p data-i18n="contactKicker">Contact</p>
-        <h2 id="contact-title" data-i18n="contactTitle">Open to software engineering roles and technical discussions around industrial software, AI integration, and energy management systems.</h2>
-        <div class="contact-methods">
-          <a href="mailto:daimaocool@gmail.com">daimaocool@gmail.com</a>
-          <span>WeChat: daimaocool</span>
-          <span data-i18n="contactNames">Zhao Yuxuan / Yuxuan Zhao / 赵宇轩 / Daimaocool</span>
+        <div class="contact-copy">
+          <p data-i18n="contactKicker">Contact</p>
+          <h2 id="contact-title" data-i18n="contactTitle">Let’s connect.</h2>
         </div>
+        <div class="contact-methods" aria-label="Contact methods">
+          <a class="contact-action" href="mailto:daimaocool@gmail.com">
+            <span>Email</span>
+            <strong>daimaocool@gmail.com</strong>
+          </a>
+          <button class="contact-action" type="button" data-copy="daimaocool">
+            <span>WeChat</span>
+            <strong>daimaocool</strong>
+          </button>
+          <button class="contact-action" type="button" data-copy="Zhao Yuxuan · 赵宇轩 · Daimaocool">
+            <span>ID</span>
+            <strong data-i18n="contactNames">Zhao Yuxuan · 赵宇轩 · Daimaocool</strong>
+          </button>
+        </div>
+        <div class="contact-feedback" data-copy-feedback role="status" aria-live="polite">Copied</div>
       </section>
     </main>
 
-    <script src="./ui.js?v=19"></script>
+    <footer class="site-footer" aria-label="Copyright">
+      <span>© 2026 Zhao Yuxuan</span>
+      <span>Zhao Yuxuan · Yuxuan Zhao · 赵宇轩 · Daimaocool</span>
+    </footer>
+
+    <script src="./ui.js?v=22"></script>
     <script src="./app.js?v=18"></script>
   </body>
 </html>

@@ -87,8 +87,8 @@
       timelineFourTitle: "面向 AI + 工业软件方向继续深化",
       timelineFourBody: "希望在研究生学习或下一份工作中，将工程经验与 AI、数据系统、智能制造结合得更深入。",
       contactKicker: "联系",
-      contactTitle: "欢迎围绕软件工程岗位、工业软件、AI 集成、数据中心能源管理方向进一步交流。",
-      contactNames: "赵宇轩 / Zhao Yuxuan / Yuxuan Zhao / Daimaocool",
+      contactTitle: "欢迎交流。",
+      contactNames: "赵宇轩 · Zhao Yuxuan · Daimaocool",
     },
     en: {
       brand: "Zhao Yuxuan",
@@ -177,8 +177,8 @@
       timelineFourTitle: "Deepening AI + industrial software",
       timelineFourBody: "Aims to combine engineering experience with AI, data systems, and intelligent manufacturing.",
       contactKicker: "Contact",
-      contactTitle: "Open to software engineering roles and technical discussions around industrial software, AI integration, and energy management systems.",
-      contactNames: "Zhao Yuxuan / Yuxuan Zhao / 赵宇轩 / Daimaocool",
+      contactTitle: "Let’s connect.",
+      contactNames: "Zhao Yuxuan · 赵宇轩 · Daimaocool",
     },
     ja: {
       brand: "趙宇軒",
@@ -267,8 +267,8 @@
       timelineFourTitle: "AI + 産業ソフトウェアを深化",
       timelineFourBody: "AI、データシステム、スマート製造と実務経験をより深く結びつけたいと考えています。",
       contactKicker: "連絡",
-      contactTitle: "ソフトウェアエンジニア職、産業ソフトウェア、AI 統合、データセンターエネルギー管理について相談できます。",
-      contactNames: "Zhao Yuxuan / Yuxuan Zhao / 赵宇轩 / Daimaocool",
+      contactTitle: "ご連絡ください。",
+      contactNames: "Zhao Yuxuan · 赵宇轩 · Daimaocool",
     },
   };
 
@@ -367,8 +367,151 @@
   const initialLanguage = new URLSearchParams(window.location.search).get("lang") || "en";
   setLanguage(initialLanguage);
 
+  const terminalBody = document.querySelector("[data-terminal-body]");
+  const terminalFrames = [
+    [
+      ["$", "connect plant-scada --site damac"],
+      ["ok", "opc.stream linked · 1,248 tags"],
+      ["$", "run energy-report --window live"],
+      ["ai", "rag memory synced · index warm"],
+      ["$", "deploy workflow"],
+    ],
+    [
+      ["$", "load mes-waps schedule"],
+      ["ok", "orders normalized · 42 batches"],
+      ["$", "simulate line capacity"],
+      ["ai", "constraint solver stable"],
+      ["$", "publish plan"],
+    ],
+    [
+      ["$", "query erp knowledge-base"],
+      ["ok", "vector search ready"],
+      ["ai", "retrieved docs · confidence 0.91"],
+      ["$", "compose answer"],
+      ["ok", "response cached"],
+    ],
+  ];
+
+  function runTerminalSimulation() {
+    if (!terminalBody || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    terminalBody.classList.add("is-running");
+    let frameIndex = 0;
+    let lineIndex = 0;
+    let charIndex = 0;
+    let rows = [];
+
+    function renderCursor(prefix, text) {
+      terminalBody.innerHTML = rows
+        .concat([[prefix, text, true]])
+        .map(([label, value, active]) => `<p class="${active ? "terminal-cursor" : ""}"><span>${label}</span>${value}</p>`)
+        .join("");
+    }
+
+    function tick() {
+      const frame = terminalFrames[frameIndex];
+      const [prefix, fullText] = frame[lineIndex];
+      renderCursor(prefix, fullText.slice(0, charIndex));
+
+      if (charIndex < fullText.length) {
+        charIndex += 1;
+        window.setTimeout(tick, 24 + (charIndex % 5) * 8);
+        return;
+      }
+
+      rows.push([prefix, fullText, false]);
+      if (rows.length > 5) rows = rows.slice(-5);
+      lineIndex += 1;
+      charIndex = 0;
+
+      if (lineIndex < frame.length) {
+        window.setTimeout(tick, 420);
+        return;
+      }
+
+      window.setTimeout(() => {
+        frameIndex = (frameIndex + 1) % terminalFrames.length;
+        lineIndex = 0;
+        charIndex = 0;
+        rows = [];
+        tick();
+      }, 1400);
+    }
+
+    tick();
+  }
+
+  runTerminalSimulation();
+
+  const copyFeedback = document.querySelector("[data-copy-feedback]");
+  let copyFeedbackTimer;
+  document.querySelectorAll(".contact-action").forEach((action) => {
+    action.addEventListener("pointermove", (event) => {
+      const rect = action.getBoundingClientRect();
+      action.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+      action.style.setProperty("--my", `${event.clientY - rect.top}px`);
+    });
+
+    action.addEventListener("click", async () => {
+      const value = action.dataset.copy;
+      if (!value) return;
+      let copied = false;
+      try {
+        await navigator.clipboard.writeText(value);
+        copied = true;
+      } catch {
+        const input = document.createElement("textarea");
+        input.value = value;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.left = "-9999px";
+        document.body.appendChild(input);
+        input.select();
+        copied = document.execCommand("copy");
+        input.remove();
+      }
+      if (!copyFeedback) return;
+      copyFeedback.textContent = copied ? "Copied" : "Copy ready";
+      copyFeedback.classList.add("is-visible");
+      window.clearTimeout(copyFeedbackTimer);
+      copyFeedbackTimer = window.setTimeout(() => copyFeedback.classList.remove("is-visible"), 1300);
+    });
+  });
+
+  const navItems = Array.from(document.querySelectorAll(".nav-links [data-section]"));
+  const sectionMap = navItems
+    .map((item) => [item.dataset.section, document.getElementById(item.dataset.section)])
+    .filter(([, section]) => section);
+
+  function setActiveSection(id) {
+    navItems.forEach((item) => item.classList.toggle("is-active", item.dataset.section === id));
+  }
+
+  if (sectionMap.length) {
+    let ticking = false;
+    function updateActiveFromScroll() {
+      const marker = window.scrollY + window.innerHeight * 0.34;
+      let activeId = "";
+      sectionMap.forEach(([id, section]) => {
+        if (section.offsetTop <= marker) activeId = id;
+      });
+      setActiveSection(activeId);
+      ticking = false;
+    }
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updateActiveFromScroll);
+      },
+      { passive: true },
+    );
+    window.addEventListener("resize", updateActiveFromScroll);
+    updateActiveFromScroll();
+  }
+
   const revealTargets = document.querySelectorAll(
-    ".hero-copy, .hero-portrait, .ticker, .intro, .profile-grid article, .section-heading, .case-card, .skill-matrix article, .talking-points article, .timeline-list article, .contact",
+    ".hero-copy, .hero-visual, .terminal-sim, .ticker, .intro, .profile-grid article, .section-heading, .case-card, .skill-matrix article, .talking-points article, .timeline-list article, .contact, .site-footer",
   );
   revealTargets.forEach((element, index) => {
     element.classList.add("reveal");
