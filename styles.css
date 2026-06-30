@@ -82,21 +82,19 @@ main,
 .site-header {
   position: fixed;
   z-index: 20;
-  top: 16px;
-  left: var(--page-gutter);
-  right: var(--page-gutter);
-  max-width: 1560px;
-  margin-inline: auto;
+  top: 0;
+  left: 0;
+  right: 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: 20px;
-  padding: 8px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.78);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 14px 38px rgba(55, 117, 111, 0.12);
-  backdrop-filter: blur(18px);
+  gap: clamp(14px, 3vw, 32px);
+  min-height: 68px;
+  padding: 0 var(--page-gutter);
+  border-bottom: 1px solid rgba(24, 48, 47, 0.1);
+  background: rgba(251, 255, 249, 0.78);
+  box-shadow: none;
+  backdrop-filter: blur(16px);
   pointer-events: auto;
 }
 
@@ -109,7 +107,7 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   width: fit-content;
   font-size: 15px;
   font-weight: 900;
@@ -117,15 +115,15 @@ a {
 
 .brand-mark {
   display: grid;
-  width: 38px;
-  height: 34px;
+  width: 34px;
+  height: 32px;
   place-items: center;
-  border-radius: 50%;
+  border-radius: 8px;
   color: white;
   background: linear-gradient(135deg, var(--leaf), var(--sky));
   font-size: 12px;
   letter-spacing: 0;
-  box-shadow: 0 10px 22px rgba(82, 201, 162, 0.34);
+  box-shadow: none;
 }
 
 .nav-links {
@@ -148,17 +146,17 @@ a {
 .nav-links a {
   position: relative;
   display: inline-flex;
-  min-height: 34px;
+  min-height: 68px;
   align-items: center;
-  border-radius: 999px;
-  padding: 0 11px;
+  border-radius: 0;
+  padding: 0 4px;
 }
 
 .nav-links a::after {
   position: absolute;
   left: 12px;
   right: 12px;
-  bottom: 3px;
+  bottom: 0;
   height: 2px;
   content: "";
   border-radius: 999px;
@@ -176,7 +174,7 @@ a {
 
 .nav-links a:hover,
 .nav-links a.is-active {
-  background: rgba(24, 48, 47, 0.055);
+  background: transparent;
 }
 
 .nav-links a:hover::after,
@@ -198,11 +196,11 @@ a {
   justify-self: end;
   display: inline-grid;
   grid-template-columns: repeat(3, 42px);
-  width: 118px;
-  padding: 3px;
+  width: 120px;
+  padding: 2px;
   border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.68);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.42);
   pointer-events: auto;
 }
 
@@ -210,7 +208,7 @@ a {
 .lang-switch button {
   display: grid;
   min-width: 0;
-  height: 28px;
+  height: 30px;
   place-items: center;
   border: 0;
   border-radius: 999px;
@@ -232,20 +230,20 @@ a {
   position: relative;
   min-height: 92svh;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(250px, 0.62fr);
+  grid-template-columns: minmax(0, 1.16fr) minmax(250px, 0.5fr);
   align-items: center;
   gap: clamp(30px, 5vw, 78px);
-  padding: 126px var(--page-gutter) 58px;
+  padding: 118px var(--page-gutter) 58px;
 }
 
 .hero-copy {
   max-width: 830px;
-  padding-left: clamp(0px, 2.2vw, 34px);
+  padding-left: clamp(28px, 5.2vw, 86px);
   animation: heroIn 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .resume-hero {
-  grid-template-columns: minmax(0, 0.98fr) minmax(320px, 0.82fr);
+  grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.58fr);
   align-items: center;
 }
 
@@ -416,11 +414,13 @@ h1 {
   display: grid;
   gap: 16px;
   align-self: center;
+  justify-self: end;
+  width: min(100%, 520px);
 }
 
 .hero-portrait {
   position: relative;
-  min-height: 460px;
+  min-height: 420px;
   border: 1px solid rgba(255, 255, 255, 0.84);
   border-radius: 8px;
   overflow: hidden;
@@ -432,7 +432,7 @@ h1 {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 460px;
+  min-height: 420px;
   object-fit: cover;
 }
 
@@ -1035,7 +1035,7 @@ h1 {
 .visual-topbar span {
   width: 8px;
   height: 8px;
-  border-radius: 999px;
+  border-radius: 6px;
   background: var(--leaf);
 }
 
@@ -1845,16 +1845,29 @@ h1 {
   align-items: center;
   width: calc(100% - var(--page-gutter) - var(--page-gutter));
   max-width: 1560px;
-  margin: clamp(22px, 4vw, 48px) auto 18px;
-  padding: 22px 0;
-  border-block: 1px solid rgba(24, 48, 47, 0.1);
+  margin: clamp(20px, 3.5vw, 42px) auto 18px;
+  padding: clamp(24px, 3vw, 34px);
+  overflow: hidden;
+  border: 1px solid rgba(24, 48, 47, 0.1);
+  border-radius: 8px;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.18)),
-    radial-gradient(circle at 100% 0%, rgba(108, 184, 255, 0.13), transparent 32%);
+    radial-gradient(circle at 96% 10%, rgba(108, 184, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 8% 100%, rgba(82, 201, 162, 0.16), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(246, 253, 250, 0.52));
+  box-shadow: 0 22px 58px rgba(55, 117, 111, 0.11);
 }
 
 .contact::after {
-  display: none;
+  position: absolute;
+  top: -40px;
+  right: 18%;
+  width: 190px;
+  height: 190px;
+  content: "";
+  border: 1px solid rgba(24, 48, 47, 0.06);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  pointer-events: none;
 }
 
 .contact > * {
@@ -1985,14 +1998,15 @@ h1 {
 .site-footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px 24px;
+  justify-content: center;
+  gap: 6px 18px;
   width: calc(100% - var(--page-gutter) - var(--page-gutter));
   max-width: 1560px;
   margin: 0 auto 26px;
   color: rgba(24, 48, 47, 0.52);
   font-size: 12px;
   font-weight: 850;
+  text-align: center;
 }
 
 .site-footer span:last-child {
@@ -2270,10 +2284,12 @@ h1 {
 
 @media (max-width: 640px) {
   .site-header {
-    top: 12px;
-    left: 12px;
-    right: 12px;
+    top: 0;
+    left: 0;
+    right: 0;
     gap: 12px;
+    min-height: 62px;
+    padding-inline: 12px;
   }
 
   .brand span:last-child {
@@ -2287,7 +2303,7 @@ h1 {
 
   .hero {
     min-height: 96svh;
-    padding: 104px 16px 44px;
+    padding: 92px 16px 44px;
   }
 
   .hero-badge {
