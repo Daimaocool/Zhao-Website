@@ -1,6 +1,15 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
+    <script>
+      (() => {
+        const params = new URLSearchParams(location.search);
+        const lang = params.get("lang");
+        if (lang === "zh") location.replace("/zh/" + location.hash);
+        if (lang === "ja") location.replace("/ja/" + location.hash);
+        if (lang === "en" && location.search) history.replaceState(null, "", "/" + location.hash);
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zhao Yuxuan (Yuxuan Zhao, 赵宇轩) | Daimaocool | Industrial Software Engineer</title>
@@ -12,7 +21,12 @@
     <meta name="creator" content="Zhao Yuxuan, Yuxuan Zhao, 赵宇轩, Daimaocool" />
     <meta name="application-name" content="Zhao Yuxuan Portfolio" />
     <meta name="subject" content="Zhao Yuxuan, Yuxuan Zhao, 赵宇轩, Daimaocool software engineering portfolio" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#fbfff9" />
+    <meta name="color-scheme" content="light" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta
       name="keywords"
       content="Zhao Yuxuan, Yuxuan Zhao, ZHAO YUXUAN, YUXUAN ZHAO, Zhao YuXuan, Zhao Yu Xuan, 赵宇轩, Daimaocool, software engineer, industrial software, MES, ERP, WAPS, AI RAG, BMS, HMI, OPC, energy management"
@@ -20,9 +34,10 @@
     <link rel="canonical" href="https://zhao.hiyeup.com/" />
     <link rel="me" href="https://github.com/Daimaocool" />
     <link rel="icon" href="https://zhao.hiyeup.com/assets/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate" hreflang="en" href="https://zhao.hiyeup.com/?lang=en" />
-    <link rel="alternate" hreflang="zh-CN" href="https://zhao.hiyeup.com/?lang=zh" />
-    <link rel="alternate" hreflang="ja" href="https://zhao.hiyeup.com/?lang=ja" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="alternate" hreflang="en" href="https://zhao.hiyeup.com/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://zhao.hiyeup.com/zh/" />
+    <link rel="alternate" hreflang="ja" href="https://zhao.hiyeup.com/ja/" />
     <link rel="alternate" hreflang="x-default" href="https://zhao.hiyeup.com/" />
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Zhao Yuxuan" />
@@ -32,7 +47,9 @@
       content="Zhao Yuxuan, also searched as Yuxuan Zhao and 赵宇轩, has experience in MES, ERP, AI knowledge retrieval, data center BMS/HMI, OPC data acquisition, and energy management systems."
     />
     <meta property="og:url" content="https://zhao.hiyeup.com/" />
-    <meta property="og:image" content="https://zhao.hiyeup.com/assets/hero-profile.png" />
+    <meta property="og:image" content="https://zhao.hiyeup.com/assets/og-profile.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="zh_CN" />
     <meta property="og:locale:alternate" content="ja_JP" />
@@ -45,8 +62,8 @@
       name="twitter:description"
       content="Zhao Yuxuan / Yuxuan Zhao / 赵宇轩 / Daimaocool. Industrial software, AI integration, data center BMS/HMI, OPC data acquisition, and energy management project experience."
     />
-    <meta name="twitter:image" content="https://zhao.hiyeup.com/assets/hero-profile.png" />
-    <link rel="stylesheet" href="./styles.css?v=23" />
+    <meta name="twitter:image" content="https://zhao.hiyeup.com/assets/og-profile.jpg" />
+    <link rel="stylesheet" href="./styles.css?v=24" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -59,7 +76,7 @@
             "familyName": "Zhao",
             "alternateName": ["Yuxuan Zhao", "ZHAO YUXUAN", "YUXUAN ZHAO", "赵宇轩", "Zhao YuXuan", "Zhao Yu Xuan", "Daimaocool"],
             "url": "https://zhao.hiyeup.com/",
-            "image": "https://zhao.hiyeup.com/assets/hero-profile.png",
+            "image": "https://zhao.hiyeup.com/assets/og-profile.jpg",
             "email": "mailto:daimaocool@gmail.com",
             "jobTitle": "Software Engineer",
             "disambiguatingDescription": "Zhao Yuxuan, also written as Yuxuan Zhao and 赵宇轩, uses the online ID Daimaocool.",
@@ -125,8 +142,45 @@
             "mainEntity": { "@id": "https://zhao.hiyeup.com/#person" },
             "primaryImageOfPage": {
               "@type": "ImageObject",
-              "url": "https://zhao.hiyeup.com/assets/hero-profile.png"
+              "url": "https://zhao.hiyeup.com/assets/og-profile.jpg"
             }
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://zhao.hiyeup.com/#projects",
+            "name": "Industrial Software and AI Project Case Studies",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "url": "https://zhao.hiyeup.com/projects/damac-data-center-bms-energy-management/",
+                "name": "Thailand DAMAC Data Center BMS and Energy Management"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "url": "https://zhao.hiyeup.com/projects/syngenta-mes-waps-advanced-scheduling/",
+                "name": "Syngenta MES, WAPS Advanced Scheduling, and Face Recognition"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "url": "https://zhao.hiyeup.com/projects/syngenta-face-recognition-workflow/",
+                "name": "Syngenta Face Recognition Feature Development"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "url": "https://zhao.hiyeup.com/projects/erp-ai-rag-document-retrieval/",
+                "name": "ERP Modules and AI Document Retrieval"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "url": "https://zhao.hiyeup.com/projects/guangzhou-vtr-ems-pda-modules/",
+                "name": "Guangzhou VTR EMS and PDA Modules"
+              }
+            ]
           }
         ]
       }
@@ -148,9 +202,9 @@
         <a href="#contact" onclick="window.scrollToSection?.('contact')" data-section="contact" data-i18n="navContact">Contact</a>
       </nav>
       <div class="lang-switch" aria-label="Language">
-        <a href="?lang=zh" data-lang="zh">中</a>
-        <a class="active" href="?lang=en" data-lang="en">EN</a>
-        <a href="?lang=ja" data-lang="ja">日</a>
+        <a href="/zh/" hreflang="zh-CN" lang="zh-CN" data-lang="zh">中</a>
+        <a class="active" href="/" hreflang="en" lang="en" data-lang="en" aria-current="page">EN</a>
+        <a href="/ja/" hreflang="ja" lang="ja" data-lang="ja">日</a>
       </div>
     </header>
 
@@ -262,6 +316,7 @@
               <div class="tag-row">
                 <span>PlantSCADA</span><span>Vijeo</span><span>OPC</span><span>BMS</span><span>Energy Report</span>
               </div>
+              <a class="case-detail-link" href="/projects/damac-data-center-bms-energy-management/">Project detail</a>
             </div>
           </article>
 
@@ -278,6 +333,7 @@
               <div class="tag-row">
                 <span>MES</span><span>WAPS</span><span>Scheduling</span><span>Face Recognition</span><span>Manufacturing</span>
               </div>
+              <a class="case-detail-link" href="/projects/syngenta-mes-waps-advanced-scheduling/">Project detail</a>
             </div>
           </article>
 
@@ -294,6 +350,7 @@
               <div class="tag-row">
                 <span>Face Recognition</span><span>Identity</span><span>Workflow</span><span>System Integration</span>
               </div>
+              <a class="case-detail-link" href="/projects/syngenta-face-recognition-workflow/">Project detail</a>
             </div>
           </article>
 
@@ -310,6 +367,7 @@
               <div class="tag-row">
                 <span>ERP</span><span>RAG</span><span>Vector DB</span><span>Memory</span><span>AI Search</span>
               </div>
+              <a class="case-detail-link" href="/projects/erp-ai-rag-document-retrieval/">Project detail</a>
             </div>
           </article>
 
@@ -326,6 +384,7 @@
               <div class="tag-row">
                 <span>EMS</span><span>PDA</span><span>Mobile Workflow</span><span>Data Collection</span>
               </div>
+              <a class="case-detail-link" href="/projects/guangzhou-vtr-ems-pda-modules/">Project detail</a>
             </div>
           </article>
         </div>
@@ -440,7 +499,7 @@
       <span>Zhao Yuxuan · Yuxuan Zhao · 赵宇轩 · Daimaocool</span>
     </footer>
 
-    <script src="./ui.js?v=22"></script>
+    <script src="./ui.js?v=23"></script>
     <script src="./app.js?v=18"></script>
   </body>
 </html>

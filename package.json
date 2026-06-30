@@ -1,0 +1,10 @@
+{
+  "name": "zhao-seo-max",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check-site.mjs",
+    "submit:indexnow": "node scripts/submit-indexnow.mjs",
+    "submit:baidu": "node scripts/submit-baidu.mjs"
+  }
+}

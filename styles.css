@@ -2018,6 +2018,228 @@ h1 {
   color: rgba(24, 48, 47, 0.66);
 }
 
+.case-detail-link {
+  display: inline-flex;
+  margin-top: 20px;
+  border-bottom: 1px solid currentColor;
+  color: #246f60;
+  font-weight: 900;
+}
+
+.case-content h3 a:hover,
+.case-detail-link:hover {
+  color: #18302f;
+}
+
+.detail-main {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1560px);
+  margin: 0 auto;
+  padding: 104px var(--page-gutter) 80px;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 40px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.breadcrumbs a {
+  border-bottom: 1px solid rgba(24, 48, 47, 0.24);
+}
+
+.detail-hero {
+  max-width: 1080px;
+  padding: 52px 0 42px;
+}
+
+.detail-hero h1 {
+  max-width: 1050px;
+  margin-bottom: 22px;
+  font-size: clamp(38px, 5vw, 72px);
+  line-height: 1.02;
+}
+
+.detail-hero > p:not(.section-kicker):not(.updated) {
+  max-width: 900px;
+  color: var(--muted);
+  font-size: clamp(17px, 1.8vw, 22px);
+  line-height: 1.7;
+}
+
+.project-index-section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.project-detail {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.project-detail-hero {
+  padding-top: 28px;
+}
+
+.updated {
+  margin-top: 22px;
+  font-size: 13px;
+}
+
+.updated span {
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.detail-cover {
+  margin: 0 0 34px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 28px 72px rgba(55, 117, 111, 0.14);
+}
+
+.detail-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.detail-panel {
+  border: 1px solid rgba(255, 255, 255, 0.84);
+  border-radius: 8px;
+  padding: clamp(24px, 3vw, 36px);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 18px 48px rgba(55, 117, 111, 0.09);
+}
+
+.detail-panel h2 {
+  margin: 0 0 16px;
+  font-size: clamp(23px, 2.5vw, 34px);
+}
+
+.detail-panel p,
+.detail-panel li {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.detail-panel ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.detail-panel li + li {
+  margin-top: 8px;
+}
+
+.detail-wide {
+  margin-top: 18px;
+}
+
+.boundary-note {
+  margin: 18px 0 0;
+  border-left: 4px solid var(--leaf);
+  border-radius: 8px;
+  padding: 22px 26px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.boundary-note p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.large-tags span {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+}
+
+.faq-block details {
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+}
+
+.faq-block details:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-block summary {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.faq-block details p {
+  margin: 12px 0 0;
+}
+
+.detail-related {
+  margin-top: 70px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.related-card {
+  display: flex;
+  min-height: 110px;
+  align-items: flex-start;
+  gap: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.84);
+  border-radius: 8px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 16px 42px rgba(55, 117, 111, 0.08);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 56px rgba(55, 117, 111, 0.14);
+}
+
+.related-card span {
+  color: #338a73;
+  font-weight: 950;
+}
+
+.related-card strong {
+  line-height: 1.35;
+}
+
+.detail-cta {
+  margin: 70px 0 0;
+  border-radius: 8px;
+  padding: clamp(28px, 5vw, 58px);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 20px 58px rgba(55, 117, 111, 0.1);
+}
+
+.detail-cta h2 {
+  margin-bottom: 24px;
+  font-size: clamp(28px, 3vw, 44px);
+}
+
 .timeline {
   padding-top: clamp(58px, 7vw, 94px);
   padding-bottom: clamp(34px, 4.5vw, 58px);
@@ -2241,6 +2463,23 @@ h1 {
   .case-card,
   .featured-case {
     grid-template-columns: 1fr;
+  }
+
+  .detail-main {
+    padding-top: 88px;
+  }
+
+  .detail-grid,
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-hero {
+    padding-top: 30px;
+  }
+
+  .project-index-section {
+    padding-top: 30px;
   }
 
   .contact {

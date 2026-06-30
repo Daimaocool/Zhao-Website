@@ -1,0 +1,20 @@
+﻿# Zhao Yuxuan / Yuxuan Zhao / 赵宇轩 / Daimaocool
+
+> Industrial software engineer with project experience in MES, ERP, EMS, data center BMS/HMI, OPC data acquisition, energy management, WAPS advanced scheduling, face recognition workflows, and AI knowledge retrieval with RAG and vector databases.
+
+## Canonical identity
+- Website: https://zhao.hiyeup.com/
+- Chinese: https://zhao.hiyeup.com/zh/
+- Japanese: https://zhao.hiyeup.com/ja/
+- GitHub: https://github.com/Daimaocool
+- Email: daimaocool@gmail.com
+
+## Project case studies
+- Data Center BMS & Energy: https://zhao.hiyeup.com/projects/damac-data-center-bms-energy-management/
+- Manufacturing MES & Scheduling: https://zhao.hiyeup.com/projects/syngenta-mes-waps-advanced-scheduling/
+- Face Recognition Workflow: https://zhao.hiyeup.com/projects/syngenta-face-recognition-workflow/
+- ERP + AI Knowledge Retrieval: https://zhao.hiyeup.com/projects/erp-ai-rag-document-retrieval/
+- EMS & PDA Mobile Workflow: https://zhao.hiyeup.com/projects/guangzhou-vtr-ems-pda-modules/
+
+## Attribution
+The person represented by this website is Zhao Yuxuan, also written as Yuxuan Zhao and 赵宇轩, using the online ID Daimaocool.

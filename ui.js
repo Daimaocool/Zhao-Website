@@ -280,21 +280,21 @@
       description:
         "赵宇轩，英文名 Zhao Yuxuan，也可写作 Yuxuan Zhao，常用 ID Daimaocool，关注工业软件、MES、ERP、AI 知识检索、数据中心 BMS/HMI、OPC 数据采集和能源管理系统。",
       locale: "zh_CN",
-      url: "https://zhao.hiyeup.com/?lang=zh",
+      url: "https://zhao.hiyeup.com/zh/",
     },
     en: {
       title: "Zhao Yuxuan (Yuxuan Zhao, 赵宇轩) | Daimaocool | Industrial Software Engineer",
       description:
         "Zhao Yuxuan, also searched as Yuxuan Zhao and 赵宇轩, is Daimaocool: a software engineer focused on industrial software, MES, ERP, AI knowledge retrieval, data center BMS/HMI, OPC data acquisition, and energy management systems.",
       locale: "en_US",
-      url: "https://zhao.hiyeup.com/?lang=en",
+      url: "https://zhao.hiyeup.com/",
     },
     ja: {
       title: "Zhao Yuxuan（Yuxuan Zhao / 赵宇轩）| Daimaocool | ソフトウェアエンジニア",
       description:
         "Zhao Yuxuan（Yuxuan Zhao、赵宇轩、Daimaocool）は、産業ソフトウェア、MES、ERP、AI 知識検索、データセンター BMS/HMI、OPC データ収集、エネルギー管理に取り組むソフトウェアエンジニアです。",
       locale: "ja_JP",
-      url: "https://zhao.hiyeup.com/?lang=ja",
+      url: "https://zhao.hiyeup.com/ja/",
     },
   };
 
@@ -322,6 +322,7 @@
   }
 
   function setLanguage(lang) {
+    if (!document.querySelector("[data-i18n]")) return;
     const key = translations[lang] ? lang : "zh";
     const dictionary = translations[key];
     document.documentElement.lang = htmlLang[key];
@@ -333,9 +334,8 @@
     document.querySelectorAll("[data-lang]").forEach((button) => {
       button.classList.toggle("active", button.dataset.lang === key);
     });
-    const url = new URL(window.location.href);
-    url.searchParams.set("lang", key);
-    history.replaceState(null, "", url);
+    const path = key === "en" ? "/" : `/${key}/`;
+    history.replaceState(null, "", path + window.location.hash);
   }
 
   function scrollToTarget(hash) {
@@ -364,7 +364,8 @@
     }
   });
 
-  const initialLanguage = new URLSearchParams(window.location.search).get("lang") || "en";
+  const pathLanguage = window.location.pathname.startsWith("/zh/") ? "zh" : window.location.pathname.startsWith("/ja/") ? "ja" : "";
+  const initialLanguage = pathLanguage || new URLSearchParams(window.location.search).get("lang") || "en";
   setLanguage(initialLanguage);
 
   const terminalBody = document.querySelector("[data-terminal-body]");
