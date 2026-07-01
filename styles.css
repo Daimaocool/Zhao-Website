@@ -231,24 +231,24 @@ a {
 
 .hero {
   position: relative;
-  width: min(100%, 1480px);
+  width: min(100%, 1560px);
   margin: 0 auto;
   min-height: 92svh;
   display: grid;
-  grid-template-columns: minmax(500px, 0.95fr) minmax(360px, 0.6fr);
+  grid-template-columns: minmax(0, 0.98fr) minmax(360px, 0.64fr);
   align-items: center;
-  gap: clamp(26px, 3vw, 46px);
+  gap: clamp(30px, 4vw, 72px);
   padding: 118px var(--page-gutter) 58px;
 }
 
 .hero-copy {
   max-width: 760px;
-  padding-left: clamp(56px, 7vw, 126px);
+  padding-left: 0;
   animation: heroIn 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .resume-hero {
-  grid-template-columns: minmax(500px, 0.95fr) minmax(360px, 0.6fr);
+  grid-template-columns: minmax(0, 0.98fr) minmax(360px, 0.64fr);
   align-items: center;
 }
 
