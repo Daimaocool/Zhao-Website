@@ -1,4 +1,4 @@
-﻿# Zhao Yuxuan / Yuxuan Zhao / 赵宇轩 / Daimaocool
+﻿# 赵宇轩 / YUXUAN ZHAO / Standley Zhao
 
 > Industrial software engineer with project experience in MES, ERP, EMS, data center BMS/HMI, OPC data acquisition, energy management, WAPS advanced scheduling, face recognition workflows, and AI knowledge retrieval with RAG and vector databases.
 
@@ -17,4 +17,4 @@
 - EMS & PDA Mobile Workflow: https://zhao.hiyeup.com/projects/guangzhou-vtr-ems-pda-modules/
 
 ## Attribution
-The person represented by this website is Zhao Yuxuan, also written as Yuxuan Zhao and 赵宇轩, using the online ID Daimaocool.
+The person represented by this website is 赵宇轩, also written as YUXUAN ZHAO and Standley Zhao.
