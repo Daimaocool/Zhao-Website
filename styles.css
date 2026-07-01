@@ -1845,7 +1845,7 @@ h1 {
   position: relative;
   scroll-margin-top: 104px;
   display: grid;
-  grid-template-columns: minmax(220px, 0.34fr) minmax(0, 1fr);
+  grid-template-columns: minmax(210px, 280px) minmax(0, 1fr);
   gap: clamp(18px, 3vw, 34px);
   align-items: center;
   width: calc(100% - var(--page-gutter) - var(--page-gutter));
@@ -1901,7 +1901,7 @@ h1 {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(260px, 1.25fr) minmax(180px, 1fr) minmax(240px, 1.1fr) minmax(180px, 1fr);
+  grid-template-columns: minmax(250px, 1.1fr) minmax(170px, 0.78fr) minmax(360px, 1.42fr) minmax(170px, 0.78fr);
   gap: 10px;
   min-width: 0;
 }
@@ -1971,11 +1971,15 @@ h1 {
   flex: 1 1 auto;
   min-width: 0;
   color: #18302f;
-  font-size: clamp(13px, 1.2vw, 15px);
+  font-size: clamp(12.5px, 1vw, 15px);
   font-weight: 900;
   line-height: 1.25;
   text-align: center;
   white-space: nowrap;
+}
+
+.contact-action:nth-child(3) strong {
+  font-size: clamp(12px, 0.88vw, 13px);
 }
 
 .contact-feedback {
